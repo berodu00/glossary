@@ -15,3 +15,7 @@ spring:
   flyway:
     enabled: false
     baseline-on-migrate: true
+
+jwt:
+  secret: c29yaW4tZ2xvc3Nhcnktc2VjcmV0LWtleS1mb3ItZGV2ZWxvcG1lbnQtZW52aXJvbm1lbnQtbXVzdC1iZS1sb25nLWVub3VnaAo= # Base64 encoded "sorin-glossary-secret-key-for-development-environment-must-be-long-enough"
+  token-validity-in-seconds: 86400 # 24 hours

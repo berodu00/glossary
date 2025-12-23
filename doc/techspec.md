@@ -23,6 +23,7 @@
 2. 백엔드는 IdP 토큰을 검증
 3. 백엔드는 자체 Access Token(JWT) 발급
 4. Refresh Token은 사용하지 않는다. (Access Token 만료 시 SSO 재인증)
+5. **Dev Environment Exception**: 로컬 개발 및 테스트 환경에서는 IdP 연동 대신 `POST /api/v1/auth/dev-login`을 통해 JWT를 발급받는 모의 인증을 허용한다. 단, 발급되는 JWT 구조는 운영 환경과 동일해야 한다.
 
 
 
