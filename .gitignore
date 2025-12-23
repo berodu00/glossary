@@ -1,0 +1,31 @@
+### Archive
+_archive_*
+
+### OS
+.DS_Store
+Thumbs.db
+
+### IDE
+.vscode/
+.idea/
+*.iml
+
+### Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+### Gradle
+.gradle/
+build/
+
+### Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+
+### Backend
+backend/build/
+backend/.gradle/
+backend/out/
+backend/__pycache__/
