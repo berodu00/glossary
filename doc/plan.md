@@ -56,10 +56,12 @@ Milestone 6: 용어 제안(Suggestion) 시스템 (Backend + Frontend)
 
 [x] Frontend: 관리자 전용 공정 관리 및 제안 승인/반려 화면 (features/admin)
 
-Milestone 7: 사용자 편의 기능 (북마크 및 로그)
-[ ] Backend: bookmarks 테이블 구현 및 토글(등록/해제) API 구현
-
-[ ] Backend: search_logs 기록 로직 구현 (Async 처리) 및 통계용 필터
+- [x] Milestone 7: User Convenience Features <!-- id: 7 -->
+    - [x] Backend: Bookmarks API & Entity <!-- id: 8 -->
+    - [x] Backend: Search Logs Entity & Service <!-- id: 9 -->
+    - [x] Frontend: Bookmark UI Integration <!-- id: 11 --> 
+    - [x] Frontend: Recent Search History & My Page <!-- id: 12 -->
+    - **Note**: Flyway migrations (V4, V5) are temporarily disabled due to checksum/lock issues. Hibernate `ddl-auto: update` is enabled. Needs consolidated migration script in future.구현 (Async 처리) 및 통계용 필터
 
 [ ] Backend: 사용자별 최근 검색어 및 즐겨찾기 목록 조회 API
 
@@ -80,7 +82,7 @@ Milestone 9: 최종 통합 및 배포 준비
 완료 조건 (Definition of Done)
 
 모든 마일스톤의 테스트 코드가 통과한다.
-
+ 
 deleted_at IS NULL 필터가 누락된 검색 API가 없다.
 
 PC와 모바일에서 동일한 검색 결과가 보장된다.

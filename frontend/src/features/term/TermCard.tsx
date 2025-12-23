@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import type { Term } from '../../types';
 import { Badge } from '../../components/ui/Badge';
-import { BookMarked, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { BookmarkButton } from '../bookmark/BookmarkButton';
 
 interface TermCardProps {
     term: Term;
@@ -28,9 +29,7 @@ export const TermCard = ({ term }: TermCardProps) => {
                         )}
                     </div>
                 </div>
-                <button className="text-slate-300 hover:text-primary-500 transition-colors p-1 rounded-full hover:bg-slate-50">
-                    <BookMarked className="w-5 h-5" />
-                </button>
+                <BookmarkButton termId={term.id} />
             </div>
 
             <p className="text-slate-600 mb-6 leading-relaxed line-clamp-2 min-h-[3rem]">

@@ -1,0 +1,1 @@
+-- V4 temporarily handled by Hibernate ddl-auto update

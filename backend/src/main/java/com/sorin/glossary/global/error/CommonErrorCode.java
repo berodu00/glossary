@@ -9,6 +9,7 @@ public enum CommonErrorCode implements ErrorCode {
     INVALID_PARAMETER("C001", "Invalid Parameter"),
     RESOURCE_NOT_FOUND("C002", "Resource not found"),
     ENTITY_NOT_FOUND("C003", "Entity Not Found"),
+    TERM_NOT_FOUND("T001", "Term Not Found"),
     INTERNAL_SERVER_ERROR("C999", "Internal Server Error"),
     ;
 

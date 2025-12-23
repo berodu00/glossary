@@ -25,8 +25,12 @@ public class TermService {
 
     private final TermRepository termRepository;
     private final ProcessRepository processRepository;
+    private final com.sorin.glossary.domain.log.application.SearchLogService searchLogService;
 
     public Page<TermResponse> searchTerms(TermSearchCondition condition, Pageable pageable) {
+        // Async logging
+        searchLogService.logSearch("TEST_USER", condition); // TODO: dynamic user
+
         Page<Term> result = termRepository.search(condition, pageable);
         return result.map(TermResponse::from);
     }

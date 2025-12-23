@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookMarked, Settings, PlusCircle, ShieldCheck } from 'lucide-react';
+import { BookMarked, Settings, PlusCircle, ShieldCheck, UserCircle } from 'lucide-react';
 
 export const Header = () => {
     return (
@@ -40,6 +40,9 @@ export const Header = () => {
                     <button className="p-2 text-slate-500 hover:text-primary-600 hover:bg-slate-100/50 rounded-full transition-colors">
                         <BookMarked className="w-5 h-5" />
                     </button>
+                    <Link to="/me" className="p-2 text-slate-400 hover:text-primary-600 rounded-full hover:bg-slate-100 transition-colors" title="내 활동">
+                        <UserCircle className="w-6 h-6" />
+                    </Link>
                     <button className="p-2 text-slate-500 hover:text-primary-600 hover:bg-slate-100/50 rounded-full transition-colors">
                         <Settings className="w-5 h-5" />
                     </button>
