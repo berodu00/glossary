@@ -89,7 +89,22 @@
 
 ### 4.5 term_suggestions (신규 용어 제안)
 
-(이하 필드 구성은 이전과 동일하며, 승인 시 terms의 initial_ko/en을 생성하여 이관한다.)
+### 4.5 term_suggestions (신규 용어 제안)
+
+| 필드명 | 타입 | 제약 | 설명 |
+| --- | --- | --- | --- |
+| id | BIGSERIAL | PK | 제안 ID |
+| requester_id | VARCHAR(50) | NOT NULL | 제안자 사번 |
+| name_ko | VARCHAR(255) | NOT NULL | 제안 용어명(한글) |
+| name_en | VARCHAR(255) |  | 제안 용어명(영문) |
+| description | TEXT | NOT NULL | 제안 설명 |
+| status | VARCHAR(20) | DEFAULT 'PENDING' | 상태 (PENDING, APPROVED, REJECTED) |
+| process_id | BIGINT |  | 매핑 공정 ID (Optional) |
+| created_at | TIMESTAMP | DEFAULT NOW() | 신청 일시 |
+| reviewed_at | TIMESTAMP |  | 처리 일시 |
+| reviewer_note | TEXT |  | 반려/승인 사유 |
+
+* 승인 시 `terms` 테이블로 이관되며, `initial_ko`, `initial_en`은 시스템이 자동 생성한다.
 
 ### 4.6 bookmarks & 4.7 search_logs
 

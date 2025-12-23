@@ -46,15 +46,15 @@ Milestone 5: Frontend - 용어 검색, 필터링 및 상세 조회
 [x] Frontend: 상세 페이지 내 유의어(Synonyms) 표시 구현
 
 Milestone 6: 용어 제안(Suggestion) 시스템 (Backend + Frontend)
-[ ] Backend: term_suggestions 테이블 마이그레이션 및 JSONB 필드 처리 구현
+[x] Backend: term_suggestions 테이블 마이그레이션 및 JSONB 필드 처리 구현
 
-[ ] Backend: POST /api/v1/suggestions 제안 등록 API 구현 (ROLE_USER)
+[x] Backend: POST /api/v1/suggestions 제안 등록 API 구현 (ROLE_USER)
 
-[ ] Backend: 관리자용 제안 승인/반려 API 구현 (승인 시 terms 자동 이관 로직 포함) 
+[x] Backend: 관리자용 제안 승인/반려 API 구현 (승인 시 terms 자동 이관 로직 포함) 
 
-[ ] Frontend: 신규 용어 제안 폼 및 유효성 검사 구현 (features/suggestion)
+[x] Frontend: 신규 용어 제안 폼 및 유효성 검사 구현 (features/suggestion)
 
-[ ] Frontend: 관리자 전용 공정 관리 및 제안 승인/반려 화면 (features/admin)
+[x] Frontend: 관리자 전용 공정 관리 및 제안 승인/반려 화면 (features/admin)
 
 Milestone 7: 사용자 편의 기능 (북마크 및 로그)
 [ ] Backend: bookmarks 테이블 구현 및 토글(등록/해제) API 구현

@@ -18,12 +18,12 @@ export const TermCard = ({ term }: TermCardProps) => {
                     <div className="flex items-center gap-2">
                         <Link to={`/terms/${term.id}`} className="hover:underline decoration-primary-500 decoration-2 underline-offset-4">
                             <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary-700 transition-colors">
-                                {term.name}
+                                {term.nameKo}
                             </h3>
                         </Link>
-                        {term.englishName && (
+                        {term.nameEn && (
                             <span className="text-sm font-medium text-slate-400 font-mono">
-                                {term.englishName}
+                                {term.nameEn}
                             </span>
                         )}
                     </div>

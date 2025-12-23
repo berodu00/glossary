@@ -1,8 +1,8 @@
 export interface Term {
     id: number;
-    name: string;
+    nameKo: string;
     description: string;
-    englishName?: string;
+    nameEn?: string;
     processId?: number;
     processName?: string;
     createdAt: string;
@@ -27,7 +27,7 @@ export interface Process {
 }
 
 export interface Page<T> {
-    items: T[];
+    content: T[];
     totalElements: number;
     totalPages: number;
     page: number;
@@ -41,4 +41,28 @@ export interface SearchParams {
     initial?: string;
     page?: number;
     size?: number;
+}
+
+// Milestone 6: Suggestions
+export type SuggestionStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
+
+export interface Suggestion {
+    id: number;
+    requesterId: string;
+    nameKo: string;
+    nameEn?: string;
+    description: string;
+    processId?: number;
+    processName?: string;
+    status: SuggestionStatus;
+    createdAt: string;
+    reviewedAt?: string;
+    reviewerNote?: string;
+}
+
+export interface CreateSuggestionRequest {
+    nameKo: string;
+    nameEn?: string;
+    description: string;
+    processId?: number;
 }

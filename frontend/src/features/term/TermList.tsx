@@ -36,7 +36,7 @@ export const TermList = ({ searchParams }: TermListProps) => {
         );
     }
 
-    if (!data?.items || data.items.length === 0) {
+    if (!data?.content || data.content.length === 0) {
         return (
             <div className="text-center py-20 text-slate-400 bg-slate-50 rounded-xl border border-slate-100 border-dashed">
                 <p>검색 결과가 없습니다.</p>
@@ -54,7 +54,7 @@ export const TermList = ({ searchParams }: TermListProps) => {
             </div>
 
             <div className="grid grid-cols-1 gap-6">
-                {data.items.map((term) => (
+                {data.content.map((term) => (
                     <TermCard key={term.id} term={term} />
                 ))}
             </div>

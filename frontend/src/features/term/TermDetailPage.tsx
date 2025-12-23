@@ -65,11 +65,11 @@ export const TermDetailPage = () => {
                                 </Badge>
                                 <div>
                                     <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-                                        {term.name}
+                                        {term.nameKo}
                                     </h1>
-                                    {term.englishName && (
+                                    {term.nameEn && (
                                         <p className="text-xl text-slate-400 font-mono">
-                                            {term.englishName}
+                                            {term.nameEn}
                                         </p>
                                     )}
                                 </div>
