@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sorin.glossary.domain.term.domain.TermRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-12-23T03:30:52" hostname="b8c5bc1ddd46" time="0.19">
+  <properties/>
+  <testcase name="용어와 공정을 매핑하여 저장한다" classname="com.sorin.glossary.domain.term.domain.TermRepositoryTest" time="0.18"/>
+  <testcase name="용어 저장 시 초성이 자동 생성된다" classname="com.sorin.glossary.domain.term.domain.TermRepositoryTest" time="0.008"/>
+  <system-out><![CDATA[2025-12-23T03:30:51.674Z  INFO 171 --- [glossary-service] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.sorin.glossary.domain.term.domain.TermRepositoryTest]: TermRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-23T03:30:52.369Z  INFO 171 --- [glossary-service] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.sorin.glossary.GlossaryApplication for test class com.sorin.glossary.domain.term.domain.TermRepositoryTest
+Hibernate: insert into processes (created_at,display_order,name) values (?,?,?)
+Hibernate: insert into terms (abbreviation,created_at,deleted_at,description,initial_en,initial_ko,name_en,name_ko,photo_url,updated_at,updated_by) values (?,?,?,?,?,?,?,?,?,?,?)
+Hibernate: insert into terms (abbreviation,created_at,deleted_at,description,initial_en,initial_ko,name_en,name_ko,photo_url,updated_at,updated_by) values (?,?,?,?,?,?,?,?,?,?,?)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

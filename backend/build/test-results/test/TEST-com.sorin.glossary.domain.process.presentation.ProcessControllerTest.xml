@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sorin.glossary.domain.process.presentation.ProcessControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-12-23T03:30:48" hostname="b8c5bc1ddd46" time="3.019">
+  <properties/>
+  <testcase name="공정 목록을 조회한다" classname="com.sorin.glossary.domain.process.presentation.ProcessControllerTest" time="2.065"/>
+  <testcase name="공정을 생성한다" classname="com.sorin.glossary.domain.process.presentation.ProcessControllerTest" time="0.952"/>
+  <system-out><![CDATA[2025-12-23T03:30:39.544Z  INFO 171 --- [glossary-service] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.sorin.glossary.domain.process.presentation.ProcessControllerTest]: ProcessControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-23T03:30:39.988Z  INFO 171 --- [glossary-service] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.sorin.glossary.GlossaryApplication for test class com.sorin.glossary.domain.process.presentation.ProcessControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2025-12-23T03:30:40.299Z  INFO 171 --- [glossary-service] [    Test worker] c.s.g.d.p.p.ProcessControllerTest        : Starting ProcessControllerTest using Java 17.0.10 with PID 171 (started by root in /home/gradle/project)
+2025-12-23T03:30:40.300Z  INFO 171 --- [glossary-service] [    Test worker] c.s.g.d.p.p.ProcessControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-12-23T03:30:48.471Z  INFO 171 --- [glossary-service] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-23T03:30:48.472Z  INFO 171 --- [glossary-service] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-23T03:30:48.485Z  INFO 171 --- [glossary-service] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 11 ms
+2025-12-23T03:30:48.542Z  INFO 171 --- [glossary-service] [    Test worker] c.s.g.d.p.p.ProcessControllerTest        : Started ProcessControllerTest in 8.491 seconds (process running for 61.803)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

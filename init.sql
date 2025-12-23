@@ -1,0 +1,2 @@
+-- Initial database setup
+-- Schema creation is handled by Flyway, but we can put basic setup here if needed.

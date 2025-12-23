@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: glossary-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/glossary
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
