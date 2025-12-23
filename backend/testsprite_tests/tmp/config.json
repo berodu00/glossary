@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "backend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:8080",
+  "backendAuthType": "Bearer token",
+  "backendCredential": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJURVNUX0FETUlOIiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE3NjY1ODA5MzN9.Unt_jA9vi_fdKvBFkTbmqI8T5XrTJ8XjrmRsIixPIReaoqXDYLINnMBdzXwzy28nRL7n2Jhv8ZUOr54YrK2AMQ",
+  "executionArgs": {
+    "projectName": "backend",
+    "projectPath": "d:\\berodu\\SORIN\\project\\Glossary\\backend",
+    "testIds": [],
+    "additionalInstruction": "The Backend is running at http://localhost:8080. \nFor Authentication, use the following Bearer Token for ADMIN Role:\nBearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJURVNUX0FETUlOIiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE3NjY1ODA5MzN9.Unt_jA9vi_fdKvBFkTbmqI8T5XrTJ8XjrmRsIixPIReaoqXDYLINnMBdzXwzy28nRL7n2Jhv8ZUOr54YrK2AMQ\n\nThis token is valid for 24 hours. Ensure all protected endpoints use this token.",
+    "envs": {
+      "API_KEY": "sk-user--O9Nu1wfG6lYUWiau6jWqz37OZgU5l3f0zk13DGiqJlh0kFf8jrKAWLXXx1gNUSekOWOL0Idsy1GshngOfXZQkIY5bUibB5y6bpBiLe3pftC40OqUodu0dGItVynCFY3l8U"
+    }
+  },
+  "proxy": "http://4f1e89ab-03f6-4b9f-b04d-38fd8c665677:3YNPLzodhsdAtLd1dssjKO0XyXtA6NpW@tun.testsprite.com:8080"
+}

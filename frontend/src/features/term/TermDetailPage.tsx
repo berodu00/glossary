@@ -3,7 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import { termApi } from '../../api/termApi';
 import { AppLayout } from '../layout/AppLayout';
 import { Badge } from '../../components/ui/Badge';
-import { ArrowLeft, BookMarked, Share2, Loader2 } from 'lucide-react';
+import { ArrowLeft, Share2, Loader2 } from 'lucide-react';
+import { BookmarkButton } from '../bookmark/BookmarkButton';
 
 export const TermDetailPage = () => {
     const { id } = useParams();
@@ -78,9 +79,7 @@ export const TermDetailPage = () => {
                                 <button className="p-2 text-slate-400 hover:text-primary-600 hover:bg-white rounded-full transition-all shadow-sm border border-transparent hover:border-slate-200">
                                     <Share2 className="w-5 h-5" />
                                 </button>
-                                <button className="p-2 text-slate-400 hover:text-primary-600 hover:bg-white rounded-full transition-all shadow-sm border border-transparent hover:border-slate-200">
-                                    <BookMarked className="w-5 h-5" />
-                                </button>
+                                {term && <BookmarkButton termId={term.id} initialBookmarked={false} />}
                             </div>
                         </div>
                     </div>

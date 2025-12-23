@@ -6,7 +6,7 @@ services:
     container_name: glossary-db
     environment:
       POSTGRES_DB: glossary
-      POSTGRES_USER: user
+      POSTGRES_USER: glossary_user
       POSTGRES_PASSWORD: password
     ports:
       - "5433:5432"

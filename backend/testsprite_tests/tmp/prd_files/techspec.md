@@ -46,8 +46,6 @@
 ## 4. 데이터베이스 스키마 (ERD)
 
 모든 스키마 변경은 Flyway Migration Script로 관리한다.
-* **Note (v1.2)**: Milestone 9에서 초기 마이그레이션 스크립트(`V1__init_schema.sql`)를 최종 엔티티 정의에 맞춰 통합(Consolidation)하였다.
-* Dev 환경에서는 `DevDataSeeder`를 통해 서버 시작 시 기본 데이터(공정, 용어)가 자동 적재된다.
 
 ### 4.1 processes (공정 마스터)
 

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "dev login should return valid jwt token",
+    "description": "Test the /api/v1/auth/dev-login POST endpoint to verify that it accepts a userId and optional role, and returns a valid JWT access token for development login."
+  },
+  {
+    "id": "TC002",
+    "title": "processes get should list_all_non_deleted_processes",
+    "description": "Test the /api/v1/processes GET endpoint to ensure it returns a list of all processes excluding those marked as soft deleted (deleted_at IS NULL filter applied)."
+  },
+  {
+    "id": "TC003",
+    "title": "processes post should create_new_process_with_valid_data",
+    "description": "Test the /api/v1/processes POST endpoint to create a new process with valid input data and verify the process is stored correctly."
+  },
+  {
+    "id": "TC004",
+    "title": "processes id put should update_existing_process",
+    "description": "Test the /api/v1/processes/{id} PUT endpoint to update an existing process by id and verify the changes are persisted."
+  },
+  {
+    "id": "TC005",
+    "title": "processes id delete should soft_delete_process",
+    "description": "Test the /api/v1/processes/{id} DELETE endpoint to soft delete a process by setting deleted_at and ensure it no longer appears in list or search results."
+  },
+  {
+    "id": "TC006",
+    "title": "terms get should search_terms_with_filters_excluding_deleted",
+    "description": "Test the /api/v1/terms GET endpoint to perform keyword, process, and initial filters on terms and verify that soft deleted terms are excluded."
+  },
+  {
+    "id": "TC007",
+    "title": "terms post should create_term_and_store_initial_en_capitalized",
+    "description": "Test the /api/v1/terms POST endpoint to create a new term and verify that the initial_en field is automatically set to the uppercase first letter of name_en."
+  },
+  {
+    "id": "TC008",
+    "title": "terms id get should_return_term_detail_or_404_if_deleted",
+    "description": "Test the /api/v1/terms/{id} GET endpoint to retrieve term details and verify it returns 404 if the term is soft deleted."
+  },
+  {
+    "id": "TC009",
+    "title": "suggestions post should_create_new_term_suggestion",
+    "description": "Test the /api/v1/suggestions POST endpoint to create a new term suggestion by a user with ROLE_USER."
+  },
+  {
+    "id": "TC010",
+    "title": "bookmarks terms termid post should_toggle_bookmark_status",
+    "description": "Test the /api/v1/bookmarks/terms/{termId} POST endpoint to toggle the bookmark status for a term for the authenticated user."
+  }
+]

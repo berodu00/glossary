@@ -75,11 +75,9 @@ Milestone 6: 용어 제안(Suggestion) 시스템 (Backend + Frontend)
     - [x] Verification: RBAC Access Control Test <!-- id: 15.6 --> 
 
 Milestone 9: 최종 통합 및 배포 준비
-[x] System: Data Seeding (20+ Terms) using `DevDataSeeder`
-[x] Frontend: 전체 모바일/태블릿 반응형 레이아웃 점검 (Tailwind CSS) 
+[ ] Frontend: 전체 모바일/태블릿 반응형 레이아웃 점검 (Tailwind CSS) 
 
-[x] System: 최종 통합 테스트 및 TechSpec.md 준수 여부 전수 검사
-[x] System: Flyway Migration Consolidation (Clean V1) 및 DB 스키마 검증 완료
+[ ] System: 최종 통합 테스트 및 TechSpec.md 준수 여부 전수 검사
 
 완료 조건 (Definition of Done)
 
