@@ -1,14 +1,16 @@
 import { Badge } from '../../components/ui/Badge';
 import { clsx } from 'clsx';
 import { Filter, Check } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { processApi } from '../../api/processApi';
 
 interface FilterPanelProps {
     activeTab: 'BASIC' | 'PROCESS';
     onTabChange: (tab: 'BASIC' | 'PROCESS') => void;
     selectedInitial: string | null;
     onInitialChange: (initial: string | null) => void;
-    selectedProcesses: string[];
-    onProcessChange: (processes: string[]) => void;
+    selectedProcesses: number[];
+    onProcessChange: (processes: number[]) => void;
 }
 
 export const FilterPanel = ({
@@ -22,18 +24,18 @@ export const FilterPanel = ({
     const initialsKo = ['ㄱ', 'ㄴ', 'ㄷ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅅ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
     const initialsEn = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-    // Mock Processes (will be replaced by API in Step 4)
-    const processes = [
-        '배소', '조액', '정액', '전해', '주조', '동제련', '전자소재',
-        '제련', '정련', '귀금속', 'Fumer', '정수', '열병합', '수처리', 'LNG 복합화력',
-        '산소공장', 'Air-Compressor'
-    ];
+    // Fetch dynamic processes
+    const { data: processes = [] } = useQuery({
+        queryKey: ['processes'],
+        queryFn: processApi.getAll,
+        staleTime: 600000,
+    });
 
-    const toggleProcess = (process: string) => {
-        if (selectedProcesses.includes(process)) {
-            onProcessChange(selectedProcesses.filter(p => p !== process));
+    const toggleProcess = (processId: number) => {
+        if (selectedProcesses.includes(processId)) {
+            onProcessChange(selectedProcesses.filter(p => p !== processId));
         } else {
-            onProcessChange([...selectedProcesses, process]);
+            onProcessChange([...selectedProcesses, processId]);
         }
     };
 
@@ -110,47 +112,59 @@ export const FilterPanel = ({
                         </div>
                     </div>
 
-                    {/* Process Filter */}
-                    <div className="pt-6 border-t border-slate-100">
-                        <div className="flex items-center justify-between mb-4">
-                            <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                                <Filter className="w-4 h-4 text-primary-500" />
-                                공정별 필터
+                    {/* Process Filter - Only active if Process Tab is selected, OR always visible? Design says FilterPanel has Tabs. 
+                        Usually tabs toggle visibility. Let's assume Process Filter is always visible or conditional? 
+                        The original design had them in one panel. Let's keep them all visible for now or follow tab logic. 
+                        Based on screenshot, it looks like a single panel controls everything. 
+                        Let's show Process Filter only if activeTab === 'PROCESS' OR always? 
+                        The screenshot shows "기본용어" / "공정용어" tabs on top. 
+                        And below it shows initials. 
+                        Below that "전체선택"... this looks like the Process Filter.
+                        So maybe Process Filter is ONLY for "공정용어" tab?
+                        Let's act as if they are separate modes. 
+                    */}
+                    {activeTab === 'PROCESS' && (
+                        <div className="pt-6 border-t border-slate-100 animate-fade-in">
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                    <Filter className="w-4 h-4 text-primary-500" />
+                                    공정별 필터
+                                </div>
+                                <button
+                                    onClick={() => onProcessChange([])}
+                                    className="text-xs text-slate-400 hover:text-primary-600 underline"
+                                >
+                                    초기화
+                                </button>
                             </div>
-                            <button
-                                onClick={() => onProcessChange([])}
-                                className="text-xs text-slate-400 hover:text-primary-600 underline"
-                            >
-                                초기화
-                            </button>
-                        </div>
 
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                            {processes.map(process => {
-                                const isSelected = selectedProcesses.includes(process);
-                                return (
-                                    <button
-                                        key={process}
-                                        onClick={() => toggleProcess(process)}
-                                        className={clsx(
-                                            "flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-left transition-all duration-200 border",
-                                            isSelected
-                                                ? "bg-emerald-50 border-emerald-200 text-emerald-700 shadow-sm"
-                                                : "bg-white border-slate-200 text-slate-600 hover:border-blue-200 hover:bg-slate-50"
-                                        )}
-                                    >
-                                        <div className={clsx(
-                                            "w-4 h-4 rounded border flex items-center justify-center transition-colors",
-                                            isSelected ? "bg-emerald-500 border-transparent" : "border-slate-300 bg-white"
-                                        )}>
-                                            {isSelected && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
-                                        </div>
-                                        <span className="truncate">{process}</span>
-                                    </button>
-                                );
-                            })}
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                                {processes.map(process => {
+                                    const isSelected = selectedProcesses.includes(process.id);
+                                    return (
+                                        <button
+                                            key={process.id}
+                                            onClick={() => toggleProcess(process.id)}
+                                            className={clsx(
+                                                "flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-left transition-all duration-200 border",
+                                                isSelected
+                                                    ? "bg-emerald-50 border-emerald-200 text-emerald-700 shadow-sm"
+                                                    : "bg-white border-slate-200 text-slate-600 hover:border-blue-200 hover:bg-slate-50"
+                                            )}
+                                        >
+                                            <div className={clsx(
+                                                "w-4 h-4 rounded border flex items-center justify-center transition-colors",
+                                                isSelected ? "bg-emerald-500 border-transparent" : "border-slate-300 bg-white"
+                                            )}>
+                                                {isSelected && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                                            </div>
+                                            <span className="truncate">{process.name}</span>
+                                        </button>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
+                    )}
 
                 </div>
             </div>

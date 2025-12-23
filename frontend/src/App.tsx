@@ -9,7 +9,7 @@ import { MyHistory } from './features/user/MyHistory';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<TermList />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/terms/:id" element={<TermDetailPage />} />
       <Route path="/suggestion/new" element={<SuggestionForm />} />
       <Route path="/admin" element={<AdminDashboard />} />

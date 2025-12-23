@@ -38,6 +38,7 @@ export interface Page<T> {
 export interface SearchParams {
     keyword?: string;
     processId?: number;
+    processIds?: number[];
     initial?: string;
     page?: number;
     size?: number;
