@@ -35,15 +35,15 @@ Milestone 4: 용어 상세 조회 및 유의어 관리
 [x] Backend: 관리자용 용어 수정/삭제(Soft Delete) API 구현 
 
 Milestone 5: Frontend - 용어 검색, 필터링 및 상세 조회
-[ ] Frontend: 메인 검색 바 및 공정 필터링 컴포넌트 구현 (features/search) 
+[x] Frontend: 메인 검색 바 및 공정 필터링 컴포넌트 구현 (features/search) 
 
-[ ] Frontend: 한글 초성/영문 스펠링 탭 필터 UI 구현
+[x] Frontend: 한글 초성/영문 스펠링 탭 필터 UI 구현
 
-[ ] Frontend: TanStack Query를 활용한 무한 스크롤 또는 페이징 처리 
+[x] Frontend: TanStack Query를 활용한 무한 스크롤 또는 페이징 처리 
 
-[ ] Frontend: 용어 상세 페이지 및 이미지 표시 로직 (features/search-detail)
+[x] Frontend: 용어 상세 페이지 및 이미지 표시 로직 (features/search-detail)
 
-[ ] Frontend: 상세 페이지 내 유의어(Synonyms) 표시 구현
+[x] Frontend: 상세 페이지 내 유의어(Synonyms) 표시 구현
 
 Milestone 6: 용어 제안(Suggestion) 시스템 (Backend + Frontend)
 [ ] Backend: term_suggestions 테이블 마이그레이션 및 JSONB 필드 처리 구현

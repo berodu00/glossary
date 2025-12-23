@@ -2,6 +2,8 @@ package com.sorin.glossary.domain.term.domain;
 
 import com.sorin.glossary.domain.process.domain.Process;
 import com.sorin.glossary.global.util.TermUtils;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -40,10 +42,12 @@ public class Term {
     @Column(name = "photo_url")
     private String photoUrl;
 
-    @Column(name = "initial_ko", nullable = false, columnDefinition = "char(1)")
+    @JdbcTypeCode(SqlTypes.CHAR)
+    @Column(name = "initial_ko", nullable = false, length = 1)
     private String initialKo;
 
-    @Column(name = "initial_en", nullable = false, columnDefinition = "char(1)")
+    @JdbcTypeCode(SqlTypes.CHAR)
+    @Column(name = "initial_en", nullable = false, length = 1)
     private String initialEn;
 
     @CreatedDate
