@@ -64,4 +64,50 @@ class TermControllerTest {
                                 .andExpect(status().isOk())
                                 .andExpect(jsonPath("$.content[0].nameKo").value("테스트용어"));
         }
+
+        @Test
+        @DisplayName("용어 상세 조회 성공")
+        void getTerm_Success() throws Exception {
+                // given
+                Long termId = 1L;
+                TermResponse term = TermResponse.builder()
+                                .id(termId)
+                                .nameKo("테스트용어")
+                                .build();
+                given(termService.getTerm(termId)).willReturn(term);
+
+                // when & then
+                mockMvc.perform(get("/api/v1/terms/{id}", termId))
+                                .andExpect(status().isOk())
+                                .andExpect(jsonPath("$.nameKo").value("테스트용어"));
+        }
+
+        @Test
+        @DisplayName("용어 수정 성공")
+        void updateTerm_Success() throws Exception {
+                // given
+                Long termId = 1L;
+                com.sorin.glossary.domain.term.dto.TermRequest request = com.sorin.glossary.domain.term.dto.TermRequest
+                                .builder()
+                                .nameKo("수정된용어")
+                                .description("설명")
+                                .build();
+
+                // when & then
+                mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                                .put("/api/v1/terms/{id}", termId)
+                                .contentType(org.springframework.http.MediaType.APPLICATION_JSON)
+                                .content(new ObjectMapper().writeValueAsString(request)))
+                                .andExpect(status().isOk());
+        }
+
+        @Test
+        @DisplayName("용어 삭제 성공")
+        void deleteTerm_Success() throws Exception {
+                Long termId = 1L;
+
+                mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                                .delete("/api/v1/terms/{id}", termId))
+                                .andExpect(status().isOk());
+        }
 }

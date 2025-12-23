@@ -29,3 +29,5 @@ backend/build/
 backend/.gradle/
 backend/out/
 backend/__pycache__/
+
+*.log

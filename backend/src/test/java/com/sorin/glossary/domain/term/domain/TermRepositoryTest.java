@@ -3,6 +3,7 @@ package com.sorin.glossary.domain.term.domain;
 import com.sorin.glossary.domain.process.domain.Process;
 import com.sorin.glossary.domain.process.domain.ProcessRepository;
 import com.sorin.glossary.domain.term.dto.TermSearchCondition;
+import com.sorin.glossary.domain.term.domain.TermSynonym;
 import com.sorin.glossary.global.config.QueryDslConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -119,5 +120,30 @@ class TermRepositoryTest {
 
         // then
         assertThat(result.getContent()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("유의어 저장 및 조회")
+    void saveAndFindSynonyms() {
+        // given
+        Term term = Term.builder()
+                .nameKo("테스트")
+                .nameEn("Test")
+                .description("desc")
+                .build();
+
+        term.getSynonyms().add(new TermSynonym(term, "유의어1"));
+        term.getSynonyms().add(new TermSynonym(term, "유의어2"));
+
+        termRepository.save(term);
+
+        // when
+        Term savedTerm = termRepository.findById(term.getId()).get();
+
+        // then
+        assertThat(savedTerm.getSynonyms()).hasSize(2);
+        assertThat(savedTerm.getSynonyms())
+                .extracting("synonym")
+                .containsExactlyInAnyOrder("유의어1", "유의어2");
     }
 }

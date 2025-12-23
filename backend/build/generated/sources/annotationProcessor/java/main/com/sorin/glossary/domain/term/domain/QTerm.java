@@ -42,6 +42,8 @@ public class QTerm extends EntityPathBase<Term> {
 
     public final ListPath<com.sorin.glossary.domain.process.domain.Process, com.sorin.glossary.domain.process.domain.QProcess> processes = this.<com.sorin.glossary.domain.process.domain.Process, com.sorin.glossary.domain.process.domain.QProcess>createList("processes", com.sorin.glossary.domain.process.domain.Process.class, com.sorin.glossary.domain.process.domain.QProcess.class, PathInits.DIRECT2);
 
+    public final ListPath<TermSynonym, QTermSynonym> synonyms = this.<TermSynonym, QTermSynonym>createList("synonyms", TermSynonym.class, QTermSynonym.class, PathInits.DIRECT2);
+
     public final DateTimePath<java.time.LocalDateTime> updatedAt = createDateTime("updatedAt", java.time.LocalDateTime.class);
 
     public final StringPath updatedBy = createString("updatedBy");

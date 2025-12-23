@@ -26,6 +26,8 @@ public class TermResponse {
     private String initialEn;
     @Builder.Default
     private List<ProcessDto> processes = new java.util.ArrayList<>();
+    @Builder.Default
+    private List<String> synonyms = new java.util.ArrayList<>();
     @com.fasterxml.jackson.annotation.JsonFormat(shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdAt;
     @com.fasterxml.jackson.annotation.JsonFormat(shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
@@ -59,6 +61,9 @@ public class TermResponse {
                 .initialEn(term.getInitialEn())
                 .processes(term.getProcesses().stream()
                         .map(ProcessDto::from)
+                        .collect(Collectors.toList()))
+                .synonyms(term.getSynonyms().stream()
+                        .map(com.sorin.glossary.domain.term.domain.TermSynonym::getSynonym)
                         .collect(Collectors.toList()))
                 .createdAt(term.getCreatedAt())
                 .updatedAt(term.getUpdatedAt())

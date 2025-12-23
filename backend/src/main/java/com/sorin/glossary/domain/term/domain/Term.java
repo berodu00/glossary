@@ -64,6 +64,9 @@ public class Term {
     @JoinTable(name = "term_process_mapping", joinColumns = @JoinColumn(name = "term_id"), inverseJoinColumns = @JoinColumn(name = "process_id"))
     private List<Process> processes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "term", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TermSynonym> synonyms = new ArrayList<>();
+
     @Builder
     public Term(String nameKo, String nameEn, String abbreviation, String description, String photoUrl,
             String updatedBy, List<Process> processes) {

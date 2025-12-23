@@ -1,0 +1,67 @@
+
+Welcome to Gradle 8.5!
+
+Here are the highlights of this release:
+ - Support for running on Java 21
+ - Faster first use with Kotlin DSL
+ - Improved error and warning messages
+
+For more details see https://docs.gradle.org/8.5/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :compileJava
+> Task :processResources UP-TO-DATE
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources UP-TO-DATE
+> Task :testClasses
+> Task :test
+
+ProcessRepositoryTest > ê³µì • ëª…ì¹­?€ ì¤‘ë³µ?????†ë‹¤ FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:180
+        Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException at ConstructorResolver.java:802
+            Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException at DefaultListableBeanFactory.java:1880
+
+ProcessRepositoryTest > ê³µì •???€?¥í•˜ê³?ì¡°íšŒ?œë‹¤ FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:145
+
+ProcessRepositoryTest > DisplayOrder ê¸°ë³¸ê°’ì? 0?´ë‹¤ FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:145
+
+docker : OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because boo
+tstrap classpath has been appended
+À§Ä¡ ÁÙ:1 ¹®ÀÚ:1
++ docker run --rm -v "d:\berodu\SORIN\project\Glossary\backend:/home/gr ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OpenJDK 64-Bit ...s been appended:String) [], RemoteExcept 
+   ion
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2025-12-23T05:18:39.470Z DEBUG 175 --- [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@62158618, started on Tue Dec 23 05:18:00 GMT 2025
+2025-12-23T05:18:39.475Z  INFO 175 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-23T05:18:39.476Z DEBUG 175 --- [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@48562206, started on Tue Dec 23 05:18:35 GMT 2025
+
+> Task :test
+
+20 tests completed, 3 failed
+
+> Task :test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/gradle/project/build/reports/tests/test/inde
+x.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 2m 46s
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+5 actionable tasks: 3 executed, 2 up-to-date

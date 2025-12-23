@@ -9,7 +9,12 @@ import org.springframework.dao.DataIntegrityViolationException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import com.sorin.glossary.global.config.JpaAuditingConfig;
+import com.sorin.glossary.global.config.QueryDslConfig;
+import org.springframework.context.annotation.Import;
+
 @DataJpaTest
+@Import({ QueryDslConfig.class, JpaAuditingConfig.class })
 class ProcessRepositoryTest {
 
     @Autowired

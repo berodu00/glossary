@@ -28,54 +28,52 @@ Milestone 3: 용어 검색 API 및 Soft Delete 필터링 (TDD)
 [x] Backend: GET /api/v1/terms 페이징 및 정렬 API 구현 및 통합 테스트
 
 Milestone 4: 용어 상세 조회 및 유의어 관리
-[ ] Backend: term_synonyms 테이블 마이그레이션 및 Entity 연관관계 설정
+[x] Backend: term_synonyms 테이블 마이그레이션 및 Entity 연관관계 설정
 
-[ ] Backend: GET /api/v1/terms/{id} 상세 조회 API 구현 (삭제된 항목 조회 시 404 반환 포함)
+[x] Backend: GET /api/v1/terms/{id} 상세 조회 API 구현 (삭제된 항목 조회 시 404 반환 포함)
 
-[ ] Backend: 관리자용 용어 수정/삭제(Soft Delete) API 구현 
+[x] Backend: 관리자용 용어 수정/삭제(Soft Delete) API 구현 
 
-Milestone 5: 용어 제안(Suggestion) 시스템
-[ ] Backend: term_suggestions 테이블 마이그레이션 및 JSONB 필드 처리 구현
-
-[ ] Backend: POST /api/v1/suggestions 제안 등록 API 구현 (ROLE_USER)
-
-[ ] Backend: 관리자용 제안 승인/반려 API 구현 (승인 시 terms 자동 이관 로직 포함) 
-
-Milestone 6: 사용자 편의 기능 (북마크 및 로그)
-[ ] Backend: bookmarks 테이블 구현 및 토글(등록/해제) API 구현
-
-[ ] Backend: search_logs 기록 로직 구현 (Async 처리) 및 통계용 필터
-
-[ ] Backend: 사용자별 최근 검색어 및 즐겨찾기 목록 조회 API
-
-Milestone 7: 인증 아키텍처 (SSO/JWT)
-[ ] Backend: Security 필터 설정 및 JWT 발급/검증 로직 구현
-
-[ ] Backend: 사번 기반 로그인 및 ROLE 별 접근 제어(RBAC) 테스트
-
-[ ] Frontend: Axios 인터셉터를 활용한 JWT 메모리 저장 및 인증 헤더 처리 
-
-
-Milestone 8: Frontend - 검색 및 필터링 UI (Responsive)
+Milestone 5: Frontend - 용어 검색, 필터링 및 상세 조회
 [ ] Frontend: 메인 검색 바 및 공정 필터링 컴포넌트 구현 (features/search) 
 
 [ ] Frontend: 한글 초성/영문 스펠링 탭 필터 UI 구현
 
 [ ] Frontend: TanStack Query를 활용한 무한 스크롤 또는 페이징 처리 
 
+[ ] Frontend: 용어 상세 페이지 및 이미지 표시 로직 (features/search-detail)
 
-Milestone 9: Frontend - 용어 상세 및 제안 UI
-[ ] Frontend: 용어 상세 페이지 및 이미지 표시 로직 (features/search)
+[ ] Frontend: 상세 페이지 내 유의어(Synonyms) 표시 구현
 
-[ ] Frontend: 신규 용어 제안 폼 및 유효성 검사 구현 (features/admin)
+Milestone 6: 용어 제안(Suggestion) 시스템 (Backend + Frontend)
+[ ] Backend: term_suggestions 테이블 마이그레이션 및 JSONB 필드 처리 구현
+
+[ ] Backend: POST /api/v1/suggestions 제안 등록 API 구현 (ROLE_USER)
+
+[ ] Backend: 관리자용 제안 승인/반려 API 구현 (승인 시 terms 자동 이관 로직 포함) 
+
+[ ] Frontend: 신규 용어 제안 폼 및 유효성 검사 구현 (features/suggestion)
+
+[ ] Frontend: 관리자 전용 공정 관리 및 제안 승인/반려 화면 (features/admin)
+
+Milestone 7: 사용자 편의 기능 (북마크 및 로그)
+[ ] Backend: bookmarks 테이블 구현 및 토글(등록/해제) API 구현
+
+[ ] Backend: search_logs 기록 로직 구현 (Async 처리) 및 통계용 필터
+
+[ ] Backend: 사용자별 최근 검색어 및 즐겨찾기 목록 조회 API
 
 [ ] Frontend: 즐겨찾기(북마크) 버튼 및 마이페이지 연동
 
-Milestone 10: Frontend - 관리자 대시보드 및 마무리
-[ ] Frontend: 관리자 전용 공정 관리 및 제안 승인/반려 화면 (features/admin) 
+Milestone 8: 인증 아키텍처 (SSO/JWT)
+[ ] Backend: Security 필터 설정 및 JWT 발급/검증 로직 구현
 
+[ ] Backend: 사번 기반 로그인 및 ROLE 별 접근 제어(RBAC) 테스트
+
+[ ] Frontend: Axios 인터셉터를 활용한 JWT 메모리 저장 및 인증 헤더 처리 
+
+Milestone 9: 최종 통합 및 배포 준비
 [ ] Frontend: 전체 모바일/태블릿 반응형 레이아웃 점검 (Tailwind CSS) 
-
 
 [ ] System: 최종 통합 테스트 및 TechSpec.md 준수 여부 전수 검사
 
