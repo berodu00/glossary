@@ -34,6 +34,25 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/health", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .requestMatchers("/api/v1/auth/dev-login").permitAll()
+
+                        // Admin Only Endpoints
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/v1/processes/**")
+                        .hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.PUT, "/api/v1/processes/**")
+                        .hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.DELETE, "/api/v1/processes/**")
+                        .hasRole("ADMIN")
+
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/v1/suggestions/*/approve")
+                        .hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/v1/suggestions/*/reject")
+                        .hasRole("ADMIN")
+
+                        .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/v1/terms").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.PUT, "/api/v1/terms/**").hasRole("ADMIN")
+                        .requestMatchers(org.springframework.http.HttpMethod.DELETE, "/api/v1/terms/**")
+                        .hasRole("ADMIN")
+
                         .requestMatchers("/api/v1/**").authenticated() // Require Auth for all other API endpoints
                         .anyRequest().permitAll() // Frontend assets or others
                 )

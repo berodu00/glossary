@@ -66,13 +66,13 @@ Milestone 6: 용어 제안(Suggestion) 시스템 (Backend + Frontend)
 [x] Backend: 사용자별 최근 검색어 및 즐겨찾기 목록 조회 API
 [x] Frontend: 즐겨찾기(북마크) 버튼 및 마이페이지 연동
 
-- [/] Milestone 8: Auth Architecture (SSO/JWT) <!-- id: 15 -->
+- [x] Milestone 8: Auth Architecture (SSO/JWT) <!-- id: 15 -->
     - [x] Backend: Security Config & JWT Dependencies <!-- id: 15.1 -->
     - [x] Backend: Jwt token provider & Filter Implementation <!-- id: 15.2 -->
     - [x] Backend: Dev/Mock Login API (Simulate IdP) <!-- id: 15.3 -->
     - [x] Frontend: Auth Context & Axios Interceptor <!-- id: 15.4 -->
     - [x] Frontend: Dev Login UI & User Session Management <!-- id: 15.5 -->
-    - [ ] Verification: RBAC Access Control Test <!-- id: 15.6 --> 
+    - [x] Verification: RBAC Access Control Test <!-- id: 15.6 --> 
 
 Milestone 9: 최종 통합 및 배포 준비
 [ ] Frontend: 전체 모바일/태블릿 반응형 레이아웃 점검 (Tailwind CSS) 
