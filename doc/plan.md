@@ -21,11 +21,11 @@ Milestone 2: 공정 마스터(Process) 및 기본 도메인 구현 (TDD)
 [x] Backend: Term Entity 정의 및 초성 추출 로직(initial_ko, initial_en) 단위 테스트 및 구현
 
 Milestone 3: 용어 검색 API 및 Soft Delete 필터링 (TDD)
-[ ] Backend: TermRepository 검색 쿼리 구현 (Keyword, ProcessId, Initial 필터링)
+[x] Backend: TermRepository 검색 쿼리 구현 (Keyword, ProcessId, Initial 필터링)
 
-[ ] Backend: [핵심] 모든 검색 및 조회 쿼리에 deleted_at IS NULL 조건 강제 적용 로직 구현
+[x] Backend: [핵심] 모든 검색 및 조회 쿼리에 deleted_at IS NULL 조건 강제 적용 로직 구현
 
-[ ] Backend: GET /api/v1/terms 페이징 및 정렬 API 구현 및 통합 테스트
+[x] Backend: GET /api/v1/terms 페이징 및 정렬 API 구현 및 통합 테스트
 
 Milestone 4: 용어 상세 조회 및 유의어 관리
 [ ] Backend: term_synonyms 테이블 마이그레이션 및 Entity 연관관계 설정
