@@ -1,0 +1,748 @@
+Initialized native services in: /home/gradle/.gradle/native
+Initialized jansi services in: /home/gradle/.gradle/native
+
+Welcome to Gradle 8.5!
+
+Here are the highlights of this release:
+ - Support for running on Java 21
+ - Faster first use with Kotlin DSL
+ - Improved error and warning messages
+
+For more details see https://docs.gradle.org/8.5/release-notes.html
+
+Received JVM installation metadata from '/opt/java/openjdk': {JAVA_HOME=/opt/java/openjdk, JAVA_VERSION=17.0.10, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.10+7, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.10+7, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Removing 0 daemon stop events from registry
+Starting a Gradle Daemon (subsequent builds will be faster)
+Starting process 'Gradle build daemon'. Working directory: /home/gradle/.gradle/daemon/8.5 Command: /opt/java/openjdk/bin/java --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -XX:MaxMetaspaceSize=384m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /opt/gradle/lib/gradle-launcher-8.5.jar -javaagent:/opt/gradle/lib/agents/gradle-instrumentation-agent-8.5.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.5
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 1.822 secs.
+The client will now receive all logging from the daemon (pid: 43). The daemon log file: /home/gradle/.gradle/daemon/8.5/daemon-43.out.log
+Starting build in new daemon [memory: 512 MiB]
+Closing daemon's stdin at end of input.
+The daemon will no longer process any standard input.
+Using 4 worker leases.
+Received JVM installation metadata from '/opt/java/openjdk': {JAVA_HOME=/opt/java/openjdk, JAVA_VERSION=17.0.10, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.10+7, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.10+7, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /home/gradle/project since the file system is not supported
+File system watching is active
+Starting Build
+Compiling settings file '/home/gradle/project/settings.gradle' using SubsetScriptTransformer.
+Compiling settings file '/home/gradle/project/settings.gradle' using BuildScriptTransformer.
+Settings evaluated using settings file '/home/gradle/project/settings.gradle'.
+Projects loaded. Root project using build file '/home/gradle/project/build.gradle'.
+Included projects: [root project 'glossary']
+
+> Configure project :
+Evaluating root project 'glossary' using build file '/home/gradle/project/build.gradle'.
+Compiling build file '/home/gradle/project/build.gradle' using SubsetScriptTransformer.
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/org.springframework.boot.gradle.plugin/3.2.1/org.springframework.boot.gradle.plugin-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download7909540744909914828bin
+Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/org/springframework/boot/org.springframework.boot.gradle.plugin/3.2.1/org.springframework.boot.gradle.plugin-3.2.1.jar]
+Downloading https://plugins.gradle.org/m2/io/spring/dependency-management/io.spring.dependency-management.gradle.plugin/1.1.4/io.spring.dependency-management.gradle.plugin-1.1.4.pom to /home/gradle/.gradle/.tmp/gradle_download5195603428511642410bin
+Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/io/spring/dependency-management/io.spring.dependency-management.gradle.plugin/1.1.4/io.spring.dependency-management.gradle.plugin-1.1.4.jar]
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-gradle-plugin/3.2.1/spring-boot-gradle-plugin-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download4582237290958155025bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-gradle-plugin/3.2.1/spring-boot-gradle-plugin-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download8234676281092789799bin
+Downloading https://plugins.gradle.org/m2/io/spring/gradle/dependency-management-plugin/1.1.4/dependency-management-plugin-1.1.4.pom to /home/gradle/.gradle/.tmp/gradle_download9763561220375992339bin
+Downloading https://plugins.gradle.org/m2/io/spring/gradle/dependency-management-plugin/1.1.4/dependency-management-plugin-1.1.4.module to /home/gradle/.gradle/.tmp/gradle_download12908850788586286649bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-buildpack-platform/3.2.1/spring-boot-buildpack-platform-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download7854725249060889339bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-loader-tools/3.2.1/spring-boot-loader-tools-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download16180146104890388045bin
+Downloading https://plugins.gradle.org/m2/org/springframework/spring-core/6.0.10/spring-core-6.0.10.pom to /home/gradle/.gradle/.tmp/gradle_download14950283239684334893bin
+Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.pom to /home/gradle/.gradle/.tmp/gradle_download6118955443321579091bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-buildpack-platform/3.2.1/spring-boot-buildpack-platform-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download11572819935482476022bin
+Downloading https://plugins.gradle.org/m2/org/springframework/spring-core/6.0.10/spring-core-6.0.10.module to /home/gradle/.gradle/.tmp/gradle_download15508730859397983049bin
+Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-parent/56/commons-parent-56.pom to /home/gradle/.gradle/.tmp/gradle_download9127508008752002488bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-loader-tools/3.2.1/spring-boot-loader-tools-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download14797154508913215458bin
+Downloading https://plugins.gradle.org/m2/org/apache/apache/29/apache-29.pom to /home/gradle/.gradle/.tmp/gradle_download13551232309889244420bin
+Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom to /home/gradle/.gradle/.tmp/gradle_download15479626556892764091bin
+Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.module to /home/gradle/.gradle/.tmp/gradle_download10548841860654129120bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download13424708159032008602bin
+Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna-platform/5.13.0/jna-platform-5.13.0.pom to /home/gradle/.gradle/.tmp/gradle_download3054502324712923988bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/client5/httpclient5/5.2.3/httpclient5-5.2.3.pom to /home/gradle/.gradle/.tmp/gradle_download4166842817047009670bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.14.2/jackson-module-parameter-names-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download2192005983128774846bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/client5/httpclient5-parent/5.2.3/httpclient5-parent-5.2.3.pom to /home/gradle/.gradle/.tmp/gradle_download17669014111621508917bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/module/jackson-modules-java8/2.14.2/jackson-modules-java8-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download9620365800672624445bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-base/2.14.2/jackson-base-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download16023161212690842243bin
+Downloading https://plugins.gradle.org/m2/org/tomlj/tomlj/1.0.0/tomlj-1.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download16831764828468857328bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/httpcomponents-parent/13/httpcomponents-parent-13.pom to /home/gradle/.gradle/.tmp/gradle_download12951822606934338021bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-bom/2.14.2/jackson-bom-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download5140179384376175472bin
+Downloading https://plugins.gradle.org/m2/org/apache/apache/27/apache-27.pom to /home/gradle/.gradle/.tmp/gradle_download10407887399147609285bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-parent/2.14/jackson-parent-2.14.pom to /home/gradle/.gradle/.tmp/gradle_download12484868527290559799bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/oss-parent/48/oss-parent-48.pom to /home/gradle/.gradle/.tmp/gradle_download15371919891450478769bin
+Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.pom to /home/gradle/.gradle/.tmp/gradle_download5625338691996697109bin
+Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.module to /home/gradle/.gradle/.tmp/gradle_download14666908176606238218bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.module to /home/gradle/.gradle/.tmp/gradle_download9758846768952112029bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.14.2/jackson-module-parameter-names-2.14.2.module to /home/gradle/.gradle/.tmp/gradle_download6926125002460657093bin
+Downloading https://plugins.gradle.org/m2/org/springframework/spring-jcl/6.0.10/spring-jcl-6.0.10.pom to /home/gradle/.gradle/.tmp/gradle_download9626580045353158473bin
+Downloading https://plugins.gradle.org/m2/org/springframework/spring-jcl/6.0.10/spring-jcl-6.0.10.module to /home/gradle/.gradle/.tmp/gradle_download11592052906216198435bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download4220331950881064900bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.pom to /home/gradle/.gradle/.tmp/gradle_download2923929467093759408bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.module to /home/gradle/.gradle/.tmp/gradle_download12390870138179488068bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.module to /home/gradle/.gradle/.tmp/gradle_download18280126142972239396bin
+Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.pom to /home/gradle/.gradle/.tmp/gradle_download9793903605168164676bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/core5/httpcore5/5.2.4/httpcore5-5.2.4.pom to /home/gradle/.gradle/.tmp/gradle_download15107327061420667879bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/core5/httpcore5-h2/5.2.4/httpcore5-h2-5.2.4.pom to /home/gradle/.gradle/.tmp/gradle_download15498914727324256831bin
+Downloading https://plugins.gradle.org/m2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.pom to /home/gradle/.gradle/.tmp/gradle_download4499351579584222048bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/core5/httpcore5-parent/5.2.4/httpcore5-parent-5.2.4.pom to /home/gradle/.gradle/.tmp/gradle_download12873068174460991035bin
+Downloading https://plugins.gradle.org/m2/org/slf4j/slf4j-parent/1.7.36/slf4j-parent-1.7.36.pom to /home/gradle/.gradle/.tmp/gradle_download6052168103447009735bin
+Downloading https://plugins.gradle.org/m2/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.pom to /home/gradle/.gradle/.tmp/gradle_download9061784336461079182bin
+Downloading https://plugins.gradle.org/m2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom to /home/gradle/.gradle/.tmp/gradle_download6808041254316930235bin
+Downloading https://plugins.gradle.org/m2/org/antlr/antlr4-master/4.7.2/antlr4-master-4.7.2.pom to /home/gradle/.gradle/.tmp/gradle_download10753099945805396650bin
+Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom to /home/gradle/.gradle/.tmp/gradle_download17831176392008297680bin
+Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom to /home/gradle/.gradle/.tmp/gradle_download8100646366159736966bin
+Downloading https://plugins.gradle.org/m2/org/tomlj/tomlj/1.0.0/tomlj-1.0.0.jar to /home/gradle/.gradle/.tmp/gradle_download14185798249406800672bin
+Downloading https://plugins.gradle.org/m2/io/spring/gradle/dependency-management-plugin/1.1.4/dependency-management-plugin-1.1.4.jar to /home/gradle/.gradle/.tmp/gradle_download10319884473372934849bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-buildpack-platform/3.2.1/spring-boot-buildpack-platform-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download1814725727099590540bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-gradle-plugin/3.2.1/spring-boot-gradle-plugin-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download11891544951335326358bin
+Downloading https://plugins.gradle.org/m2/org/springframework/boot/spring-boot-loader-tools/3.2.1/spring-boot-loader-tools-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download14639901974767424144bin
+Downloading https://plugins.gradle.org/m2/org/springframework/spring-core/6.0.10/spring-core-6.0.10.jar to /home/gradle/.gradle/.tmp/gradle_download17854846664361198599bin
+Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-compress/1.23.0/commons-compress-1.23.0.jar to /home/gradle/.gradle/.tmp/gradle_download3915342464484797429bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar to /home/gradle/.gradle/.tmp/gradle_download3842772112311098777bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar to /home/gradle/.gradle/.tmp/gradle_download4959366676316412292bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.14.2/jackson-module-parameter-names-2.14.2.jar to /home/gradle/.gradle/.tmp/gradle_download452957200426929108bin
+Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.jar to /home/gradle/.gradle/.tmp/gradle_download14438894396508386068bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/client5/httpclient5/5.2.3/httpclient5-5.2.3.jar to /home/gradle/.gradle/.tmp/gradle_download5410013457567805143bin
+Downloading https://plugins.gradle.org/m2/org/springframework/spring-jcl/6.0.10/spring-jcl-6.0.10.jar to /home/gradle/.gradle/.tmp/gradle_download9391194321273538442bin
+Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna-platform/5.13.0/jna-platform-5.13.0.jar to /home/gradle/.gradle/.tmp/gradle_download5549186687476793965bin
+Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar to /home/gradle/.gradle/.tmp/gradle_download16321734796522785730bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/core5/httpcore5-h2/5.2.4/httpcore5-h2-5.2.4.jar to /home/gradle/.gradle/.tmp/gradle_download6960271596441280403bin
+Downloading https://plugins.gradle.org/m2/org/apache/httpcomponents/core5/httpcore5/5.2.4/httpcore5-5.2.4.jar to /home/gradle/.gradle/.tmp/gradle_download4936600421540870370bin
+Downloading https://plugins.gradle.org/m2/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar to /home/gradle/.gradle/.tmp/gradle_download17739081835841644057bin
+Downloading https://plugins.gradle.org/m2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar to /home/gradle/.gradle/.tmp/gradle_download7621281920498165491bin
+Downloading https://plugins.gradle.org/m2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar to /home/gradle/.gradle/.tmp/gradle_download174445422138696344bin
+Applying dependency management to configuration 'annotationProcessor' in project 'glossary'
+Applying dependency management to configuration 'apiElements' in project 'glossary'
+Applying dependency management to configuration 'archives' in project 'glossary'
+Applying dependency management to configuration 'bootArchives' in project 'glossary'
+Applying dependency management to configuration 'compileClasspath' in project 'glossary'
+Applying dependency management to configuration 'compileOnly' in project 'glossary'
+Applying dependency management to configuration 'default' in project 'glossary'
+Applying dependency management to configuration 'developmentOnly' in project 'glossary'
+Applying dependency management to configuration 'implementation' in project 'glossary'
+Applying dependency management to configuration 'mainSourceElements' in project 'glossary'
+Applying dependency management to configuration 'productionRuntimeClasspath' in project 'glossary'
+Applying dependency management to configuration 'runtimeClasspath' in project 'glossary'
+Applying dependency management to configuration 'runtimeElements' in project 'glossary'
+Applying dependency management to configuration 'runtimeOnly' in project 'glossary'
+Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'glossary'
+Applying dependency management to configuration 'testAnnotationProcessor' in project 'glossary'
+Applying dependency management to configuration 'testCompileClasspath' in project 'glossary'
+Applying dependency management to configuration 'testCompileOnly' in project 'glossary'
+Applying dependency management to configuration 'testImplementation' in project 'glossary'
+Applying dependency management to configuration 'testResultsElementsForTest' in project 'glossary'
+Applying dependency management to configuration 'testRuntimeClasspath' in project 'glossary'
+Applying dependency management to configuration 'testRuntimeOnly' in project 'glossary'
+Compiling build file '/home/gradle/project/build.gradle' using BuildScriptTransformer.
+All projects evaluated.
+Task name matched 'test'
+Selected primary task 'test' from project :
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test']
+Tasks that were excluded: []
+Resolve mutations for :compileJava (Thread[Execution worker,5,main]) started.
+:compileJava (Thread[Execution worker,5,main]) started.
+
+> Task :compileJava
+Resolving global dependency management for project 'glossary'
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.2.1/spring-boot-dependencies-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download12130380319498224114bin
+Downloading https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.24.2/assertj-bom-3.24.2.pom to /home/gradle/.gradle/.tmp/gradle_download14966621872791318086bin
+Downloading https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-bom/5.16.0/brave-bom-5.16.0.pom to /home/gradle/.gradle/.tmp/gradle_download13610500139616469866bin
+Downloading https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/2.16.3/zipkin-reporter-bom-2.16.3.pom to /home/gradle/.gradle/.tmp/gradle_download3468518586620830616bin
+Downloading https://repo.maven.apache.org/maven2/com/datastax/oss/java-driver-bom/4.17.0/java-driver-bom-4.17.0.pom to /home/gradle/.gradle/.tmp/gradle_download194645764978091526bin
+Downloading https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-bom/4.2.23/metrics-bom-4.2.23.pom to /home/gradle/.gradle/.tmp/gradle_download14501652039778999035bin
+Downloading https://repo.maven.apache.org/maven2/io/dropwizard/metrics/metrics-parent/4.2.23/metrics-parent-4.2.23.pom to /home/gradle/.gradle/.tmp/gradle_download13073807644385352255bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-bom/4.0.4/jaxb-bom-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download17680120346786860864bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.8/project-1.0.8.pom to /home/gradle/.gradle/.tmp/gradle_download3261344471311507020bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.16/groovy-bom-4.0.16.pom to /home/gradle/.gradle/.tmp/gradle_download9442036031141456488bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.16/groovy-bom-4.0.16.module to /home/gradle/.gradle/.tmp/gradle_download12143494890789324641bin
+Downloading https://repo.maven.apache.org/maven2/org/infinispan/infinispan-bom/14.0.21.Final/infinispan-bom-14.0.21.Final.pom to /home/gradle/.gradle/.tmp/gradle_download16158244669484156897bin
+Downloading https://repo.maven.apache.org/maven2/org/infinispan/infinispan-build-configuration-parent/14.0.21.Final/infinispan-build-configuration-parent-14.0.21.Final.pom to /home/gradle/.gradle/.tmp/gradle_download16339048946718279973bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/39/jboss-parent-39.pom to /home/gradle/.gradle/.tmp/gradle_download15925007186386521872bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.15.3/jackson-bom-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download17591373286028196794bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.15/jackson-parent-2.15.pom to /home/gradle/.gradle/.tmp/gradle_download15012038574460166770bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/50/oss-parent-50.pom to /home/gradle/.gradle/.tmp/gradle_download13572790392590714665bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jersey/jersey-bom/3.1.5/jersey-bom-3.1.5.pom to /home/gradle/.gradle/.tmp/gradle_download6013721888457945762bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.5/jetty-ee10-bom-12.0.5.pom to /home/gradle/.gradle/.tmp/gradle_download7968644902845737335bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.5/jetty-bom-12.0.5.pom to /home/gradle/.gradle/.tmp/gradle_download12276121629817616887bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download8157885755933226110bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module to /home/gradle/.gradle/.tmp/gradle_download12041233188748144350bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-bom/1.9.21/kotlin-bom-1.9.21.pom to /home/gradle/.gradle/.tmp/gradle_download3646810934267560280bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.7.3/kotlinx-coroutines-bom-1.7.3.pom to /home/gradle/.gradle/.tmp/gradle_download3956253666149715692bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-bom/1.6.2/kotlinx-serialization-bom-1.6.2.pom to /home/gradle/.gradle/.tmp/gradle_download14162438774770472104bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-bom/2.21.1/log4j-bom-2.21.1.pom to /home/gradle/.gradle/.tmp/gradle_download10734855242784730155bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/logging-parent/10.1.1/logging-parent-10.1.1.pom to /home/gradle/.gradle/.tmp/gradle_download4621157598544080542bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/apache/30/apache-30.pom to /home/gradle/.gradle/.tmp/gradle_download4326526820349164908bin
+Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.12.1/micrometer-bom-1.12.1.pom to /home/gradle/.gradle/.tmp/gradle_download5543327603353435815bin
+Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.2.1/micrometer-tracing-bom-1.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download7169308658228065929bin
+Downloading https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/5.7.0/mockito-bom-5.7.0.pom to /home/gradle/.gradle/.tmp/gradle_download780564826214494898bin
+Downloading https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.104.Final/netty-bom-4.1.104.Final.pom to /home/gradle/.gradle/.tmp/gradle_download3070336276621265474bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom, /home/gradle/.gradle/caches/modules-2/files-2.1/org.sonatype.oss/oss-parent/7/46b8a785b60a2767095b8611613b58577e96d4c9/oss-parent-7.pom]
+Downloading https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-bom/4.12.0/okhttp-bom-4.12.0.pom to /home/gradle/.gradle/.tmp/gradle_download16078015311401918977bin
+Downloading https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-bom/4.12.0/okhttp-bom-4.12.0.module to /home/gradle/.gradle/.tmp/gradle_download9971774014363828504bin
+Downloading https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.31.0/opentelemetry-bom-1.31.0.pom to /home/gradle/.gradle/.tmp/gradle_download1238219657338480841bin
+Downloading https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.31.0/opentelemetry-bom-1.31.0.module to /home/gradle/.gradle/.tmp/gradle_download15193564746556496917bin
+Downloading https://repo.maven.apache.org/maven2/com/oracle/database/jdbc/ojdbc-bom/23.3.0.23.09/ojdbc-bom-23.3.0.23.09.pom to /home/gradle/.gradle/.tmp/gradle_download7338654870433377292bin
+Downloading https://repo.maven.apache.org/maven2/io/prometheus/simpleclient_bom/0.16.0/simpleclient_bom-0.16.0.pom to /home/gradle/.gradle/.tmp/gradle_download2752035839875186161bin
+Downloading https://repo.maven.apache.org/maven2/io/prometheus/parent/0.16.0/parent-0.16.0.pom to /home/gradle/.gradle/.tmp/gradle_download4289566283462564882bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-bom/5.0.0/querydsl-bom-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download18313097606275439172bin
+Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.1/reactor-bom-2023.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download14759777522995679296bin
+Downloading https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.1/reactor-bom-2023.0.1.module to /home/gradle/.gradle/.tmp/gradle_download5700349684451193542bin
+Downloading https://repo.maven.apache.org/maven2/io/rest-assured/rest-assured-bom/5.3.2/rest-assured-bom-5.3.2.pom to /home/gradle/.gradle/.tmp/gradle_download3689706226679572373bin
+Downloading https://repo.maven.apache.org/maven2/io/rsocket/rsocket-bom/1.1.3/rsocket-bom-1.1.3.pom to /home/gradle/.gradle/.tmp/gradle_download17814570026378542871bin
+Downloading https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-bom/4.14.1/selenium-bom-4.14.1.pom to /home/gradle/.gradle/.tmp/gradle_download9113076848213232846bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.1/spring-amqp-bom-3.1.1.pom to /home/gradle/.gradle/.tmp/gradle_download4865700481337689166bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.1/spring-amqp-bom-3.1.1.module to /home/gradle/.gradle/.tmp/gradle_download10175691155599006794bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/batch/spring-batch-bom/5.1.0/spring-batch-bom-5.1.0.pom to /home/gradle/.gradle/.tmp/gradle_download14214931728627534299bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2023.1.1/spring-data-bom-2023.1.1.pom to /home/gradle/.gradle/.tmp/gradle_download17927081090587863328bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.1.2/spring-framework-bom-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download522191325301876074bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.1.2/spring-framework-bom-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download12268347746792885736bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.2.1/spring-integration-bom-6.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download4965192541246446983bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.2.1/spring-integration-bom-6.2.1.module to /home/gradle/.gradle/.tmp/gradle_download3634236125881770149bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/restdocs/spring-restdocs-bom/3.0.1/spring-restdocs-bom-3.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download1379192415448429442bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.2.1/spring-security-bom-6.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download6810974378017439338bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.2.1/spring-security-bom-6.2.1.module to /home/gradle/.gradle/.tmp/gradle_download16579921889335618816bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.2.1/spring-session-bom-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download8729263525981355646bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.2.1/spring-session-bom-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download3970396708876010079bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/ws/spring-ws-bom/4.0.9/spring-ws-bom-4.0.9.pom to /home/gradle/.gradle/.tmp/gradle_download15190014561768296599bin
+Downloading https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/1.19.3/testcontainers-bom-1.19.3.pom to /home/gradle/.gradle/.tmp/gradle_download6241934840885310518bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-apt/5.0.0/querydsl-apt-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download14385255722004331933bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.pom to /home/gradle/.gradle/.tmp/gradle_download6924146278671456137bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.pom to /home/gradle/.gradle/.tmp/gradle_download13521075308570088499bin
+Downloading https://repo.maven.apache.org/maven2/org/projectlombok/lombok/1.18.30/lombok-1.18.30.pom to /home/gradle/.gradle/.tmp/gradle_download2519131735166113214bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-root/5.0.0/querydsl-root-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download4177445338268572071bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.7/project-1.0.7.pom to /home/gradle/.gradle/.tmp/gradle_download11539073520392392207bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-parent/0.1.0/querydsl-parent-0.1.0.pom to /home/gradle/.gradle/.tmp/gradle_download11815550982015066409bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download3825191831399945208bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download10804712389162704906bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download10083672880818229442bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-bom/1.5.20/kotlin-bom-1.5.20.pom to /home/gradle/.gradle/.tmp/gradle_download477449063185893473bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download11750608652092840881bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download16302287820206790811bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download656152573304818840bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-jpa/5.0.0/querydsl-jpa-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download10451602582004069851bin
+Downloading https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/9.22.3/flyway-core-9.22.3.pom to /home/gradle/.gradle/.tmp/gradle_download11944283217054762497bin
+Downloading https://repo.maven.apache.org/maven2/org/flywaydb/flyway-parent/9.22.3/flyway-parent-9.22.3.pom to /home/gradle/.gradle/.tmp/gradle_download5252859016098764687bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-codegen/5.0.0/querydsl-codegen-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download12728062733651492694bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download16713723040830759795bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download2883192373936255561bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download14965265678087437713bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.pom to /home/gradle/.gradle/.tmp/gradle_download14954633932236062019bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa-parent/3.2.1/spring-data-jpa-parent-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download11719804989817826553bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download15364095229644138106bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download12162930260340054876bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download17354691446983324005bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-parent/3.2.1/spring-data-parent-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download5818952741012697680bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-build/3.2.1/spring-data-build-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download16748170010103829255bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download15219484804644810147bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.pom to /home/gradle/.gradle/.tmp/gradle_download6694568772891745488bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download13582920181534000804bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.pom to /home/gradle/.gradle/.tmp/gradle_download5090706436336872751bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/validator/hibernate-validator-parent/8.0.1.Final/hibernate-validator-parent-8.0.1.Final.pom to /home/gradle/.gradle/.tmp/gradle_download15368562489164049600bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download12768052407060657234bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.7.0.Alpha10/arquillian-bom-1.7.0.Alpha10.pom to /home/gradle/.gradle/.tmp/gradle_download5312468719671286940bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.6/shrinkwrap-bom-1.2.6.pom to /home/gradle/.gradle/.tmp/gradle_download16359804517382164377bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/3.1.4/shrinkwrap-resolver-bom-3.1.4.pom to /home/gradle/.gradle/.tmp/gradle_download17122792402055833288bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.6.3/maven-3.6.3.pom to /home/gradle/.gradle/.tmp/gradle_download14115899568950460040bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/33/maven-parent-33.pom to /home/gradle/.gradle/.tmp/gradle_download10991270826304335972bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/apache/21/apache-21.pom to /home/gradle/.gradle/.tmp/gradle_download15694933460258402598bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0/shrinkwrap-descriptors-bom-2.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download5109607005610006124bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/6.1.2/spring-web-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download16377672862710902101bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download15317837269057974583bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download17402667049671106569bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download10902426709118571610bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/6.1.2/spring-web-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download17529704934577835395bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download3643195636064671413bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download16890902847530677014bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download497180083065903547bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download6253519565810233746bin
+Downloading https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download14123790566796030614bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.15.3/jackson-dataformats-text-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download12516629250320873681bin
+Downloading https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.10.1/gson-parent-2.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download2524906844787998742bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.15.3/jackson-base-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download840702711251625408bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download2341060335817860619bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-core/5.0.0/querydsl-core-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download7175171236269845871bin
+Downloading https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom to /home/gradle/.gradle/.tmp/gradle_download11049635010288352414bin
+Downloading https://repo.maven.apache.org/maven2/io/github/classgraph/classgraph/4.8.108/classgraph-4.8.108.pom to /home/gradle/.gradle/.tmp/gradle_download3999814447161246590bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/codegen-utils/5.0.0/codegen-utils-5.0.0.pom to /home/gradle/.gradle/.tmp/gradle_download11568588659523177273bin
+Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.pom to /home/gradle/.gradle/.tmp/gradle_download4422502671511600601bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download8085478941721281933bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download14695274152326297273bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download8893464457246395998bin
+Downloading https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download9800712485128602066bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download17701709397416436793bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom, /home/gradle/.gradle/caches/modules-2/files-2.1/org.sonatype.oss/oss-parent/9/e5cdc4d23b86d79c436f16fed20853284e868f65/oss-parent-9.pom]
+Downloading https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download17844964872676503019bin
+Downloading https://repo.maven.apache.org/maven2/io/smallrye/jandex/3.1.2/jandex-3.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download16959192580003741288bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.pom to /home/gradle/.gradle/.tmp/gradle_download15551754460505298335bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.pom to /home/gradle/.gradle/.tmp/gradle_download11374295130490738697bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.6/project-1.0.6.pom to /home/gradle/.gradle/.tmp/gradle_download542781783898994037bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.module to /home/gradle/.gradle/.tmp/gradle_download5768776399185205127bin
+Downloading https://repo.maven.apache.org/maven2/io/smallrye/jandex-parent/3.1.2/jandex-parent-3.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download10051154118487393756bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/logging/logging-parent/1.0.1.Final/logging-parent-1.0.1.Final.pom to /home/gradle/.gradle/.tmp/gradle_download6609564326362901650bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.6.0/classmate-1.6.0.pom to /home/gradle/.gradle/.tmp/gradle_download8026048150516265630bin
+Downloading https://repo.maven.apache.org/maven2/io/smallrye/smallrye-build-parent/39/smallrye-build-parent-39.pom to /home/gradle/.gradle/.tmp/gradle_download15665890475047724960bin
+Downloading https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.pom to /home/gradle/.gradle/.tmp/gradle_download17770562470970978902bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/55/oss-parent-55.pom to /home/gradle/.gradle/.tmp/gradle_download15584582185923559766bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.pom, /home/gradle/.gradle/caches/modules-2/files-2.1/org.junit/junit-bom/5.9.3/b1874b6a66656e4f5e4b492ab321249bcb749dc7/junit-bom-5.9.3.pom]
+Downloading https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.14.10/byte-buddy-parent-1.14.10.pom to /home/gradle/.gradle/.tmp/gradle_download5587702843475542925bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.module, /home/gradle/.gradle/caches/modules-2/files-2.1/org.junit/junit-bom/5.9.3/d70d3d9a503c573e648ef70fb2e211fbe44aa63e/junit-bom-5.9.3.module]
+Downloading https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download17053927743289743020bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api-parent/4.0.1/jakarta.xml.bind-api-parent-4.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download5231657746929291450bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download10666152274539746906bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download7130724374802052505bin
+Downloading https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.pom to /home/gradle/.gradle/.tmp/gradle_download4713853407566817056bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-runtime-parent/4.0.4/jaxb-runtime-parent-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download9929290406281772131bin
+Downloading https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.13.0/antlr4-master-4.13.0.pom to /home/gradle/.gradle/.tmp/gradle_download5927943094059637374bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-parent/4.0.4/jaxb-parent-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download12694484572733070423bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-bom-ext/4.0.4/jaxb-bom-ext-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download15719170863902329322bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download8583789510165733203bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/6.1.2/spring-context-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download5762504943807194178bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download3063074016194609650bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download15065712948881530377bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download12438583871049544766bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/6.1.2/spring-context-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download6975600476539686213bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download10744207982605828514bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download12035967973999715358bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/6.1.2/spring-core-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download14767534263104098934bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download4690311784974032149bin
+Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.pom to /home/gradle/.gradle/.tmp/gradle_download9576365032697544310bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/6.1.2/spring-core-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download303346090409960846bin
+Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/2.0.9/slf4j-parent-2.0.9.pom to /home/gradle/.gradle/.tmp/gradle_download17661337674887277970bin
+Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-bom/2.0.9/slf4j-bom-2.0.9.pom to /home/gradle/.gradle/.tmp/gradle_download17569352525522385236bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download15822264246638092650bin
+Downloading https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.2/snakeyaml-2.2.pom to /home/gradle/.gradle/.tmp/gradle_download11475993780659626617bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download10503501132392581451bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download82063549958589491bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download14858658744375155668bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download6621590333997459390bin
+Cache entries evicted. In-memory cache of /home/gradle/project/.gradle/8.5/checksums/sha1-checksums.bin: Size{346} MaxSize{400}, CacheStats{hitCount=184, missCount=349, loadSuccessCount=347, loadExceptionCount=0, totalLoadTime=1639351553, evictionCount=1} 
+Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download6849923175119195209bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.pom to /home/gradle/.gradle/.tmp/gradle_download15392710091337181956bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download10079085543270924304bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download7498479479299530977bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download9168384899878490555bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download11314539052346748201bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.pom to /home/gradle/.gradle/.tmp/gradle_download11747672543817956868bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-modules-java8/2.15.3/jackson-modules-java8-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download15102754781592368540bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.module to /home/gradle/.gradle/.tmp/gradle_download4334128294998109419bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download17738963610036269297bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download17506574348373766329bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download15747957456442686085bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download12600954673481786697bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.pom to /home/gradle/.gradle/.tmp/gradle_download7809335587599365908bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.pom to /home/gradle/.gradle/.tmp/gradle_download13887616063391291573bin
+Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.pom to /home/gradle/.gradle/.tmp/gradle_download6297778619813191801bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download18233757344143564958bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download11152626035096519772bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download16461762477458966690bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download14513313804662684950bin
+Downloading https://repo.maven.apache.org/maven2/com/mysema/commons/mysema-commons-lang/0.2.4/mysema-commons-lang-0.2.4.pom to /home/gradle/.gradle/.tmp/gradle_download9597927236178293453bin
+Downloading https://repo.maven.apache.org/maven2/com/mysema/home/mysema-source/0.3.0/mysema-source-0.3.0.pom to /home/gradle/.gradle/.tmp/gradle_download12987723462465508425bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0.pom to /home/gradle/.gradle/.tmp/gradle_download10992764966091667878bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download9595237663828529066bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download6079805187710892643bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download4491014550455406296bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download15014166533953252158bin
+Downloading https://repo.maven.apache.org/maven2/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.pom to /home/gradle/.gradle/.tmp/gradle_download1679404110693097517bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.pom to /home/gradle/.gradle/.tmp/gradle_download5727256827630189923bin
+Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.pom to /home/gradle/.gradle/.tmp/gradle_download13283196856865325656bin
+Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-parent/1.4.14/logback-parent-1.4.14.pom to /home/gradle/.gradle/.tmp/gradle_download8865106794849922614bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j/2.21.1/log4j-2.21.1.pom to /home/gradle/.gradle/.tmp/gradle_download12683880614126057956bin
+Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm-bom/9.5/asm-bom-9.5.pom to /home/gradle/.gradle/.tmp/gradle_download2213280805110220530bin
+Downloading https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5.1/ow2-1.5.1.pom to /home/gradle/.gradle/.tmp/gradle_download13424697914643681608bin
+Downloading https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-bom/3.0.19/groovy-bom-3.0.19.pom to /home/gradle/.gradle/.tmp/gradle_download2519393188310622323bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.15.2/jackson-bom-2.15.2.pom to /home/gradle/.gradle/.tmp/gradle_download2008171748407287299bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/platform/jakarta.jakartaee-bom/9.1.0/jakarta.jakartaee-bom-9.1.0.pom to /home/gradle/.gradle/.tmp/gradle_download2528458084614241313bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/platform/jakartaee-api-parent/9.1.0/jakartaee-api-parent-9.1.0.pom to /home/gradle/.gradle/.tmp/gradle_download3450043363085606896bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/9.4.53.v20231009/jetty-bom-9.4.53.v20231009.pom to /home/gradle/.gradle/.tmp/gradle_download17083787982363525119bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.0/junit-bom-5.10.0.pom to /home/gradle/.gradle/.tmp/gradle_download9695672410382369976bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.0/junit-bom-5.10.0.module to /home/gradle/.gradle/.tmp/gradle_download6179375889414041631bin
+Downloading https://repo.maven.apache.org/maven2/io/fabric8/kubernetes-client-bom/5.12.4/kubernetes-client-bom-5.12.4.pom to /home/gradle/.gradle/.tmp/gradle_download12532030564804807220bin
+Downloading https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/4.11.0/mockito-bom-4.11.0.pom to /home/gradle/.gradle/.tmp/gradle_download10317901983518740218bin
+Downloading https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.97.Final/netty-bom-4.1.97.Final.pom to /home/gradle/.gradle/.tmp/gradle_download829197880016302085bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/5.3.29/spring-framework-bom-5.3.29.pom to /home/gradle/.gradle/.tmp/gradle_download3565102538230571393bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/5.3.29/spring-framework-bom-5.3.29.module to /home/gradle/.gradle/.tmp/gradle_download1910336417029879440bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.pom to /home/gradle/.gradle/.tmp/gradle_download7441368345728986500bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.module to /home/gradle/.gradle/.tmp/gradle_download9995845156141225681bin
+Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.pom to /home/gradle/.gradle/.tmp/gradle_download14083267182010677053bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download12540376469587459685bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download6951608218578429858bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download840732700558369737bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/angus-activation-project/2.0.1/angus-activation-project-2.0.1.pom to /home/gradle/.gradle/.tmp/gradle_download13753984028501251478bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-txw-parent/4.0.4/jaxb-txw-parent-4.0.4.pom to /home/gradle/.gradle/.tmp/gradle_download14978098450596311058bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons/4.1.2/istack-commons-4.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download11631602833379277848bin
+Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.pom to /home/gradle/.gradle/.tmp/gradle_download9233058060299125564bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.pom to /home/gradle/.gradle/.tmp/gradle_download18216589042981210896bin
+Excluding []
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-apt/5.0.0/querydsl-apt-5.0.0-jakarta.jar to /home/gradle/.gradle/.tmp/gradle_download996160679884142603bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/3.2.1/spring-boot-starter-data-jpa-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download3981014859757775287bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-validation/3.2.1/spring-boot-starter-validation-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download776569740211930690bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa/3.2.1/spring-data-jpa-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download13118322997061803290bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/3.2.1/spring-boot-starter-web-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download16449026503003565645bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/3.2.1/spring-boot-starter-aop-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download10770469384032979253bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.2.1/spring-boot-starter-jdbc-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download5743129350583909216bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-json/3.2.1/spring-boot-starter-json-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download13826746316829815662bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter/3.2.1/spring-boot-starter-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download15461008418425280490bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar to /home/gradle/.gradle/.tmp/gradle_download14880291296955999411bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/3.2.1/spring-boot-starter-tomcat-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download12305004946331897219bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/orm/hibernate-core/6.4.1.Final/hibernate-core-6.4.1.Final.jar to /home/gradle/.gradle/.tmp/gradle_download16209302921107998652bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar to /home/gradle/.gradle/.tmp/gradle_download14355872966174642973bin
+Downloading https://repo.maven.apache.org/maven2/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar to /home/gradle/.gradle/.tmp/gradle_download252743597687172248bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-jpa/5.0.0/querydsl-jpa-5.0.0-jakarta.jar to /home/gradle/.gradle/.tmp/gradle_download9537172459131525917bin
+Downloading https://repo.maven.apache.org/maven2/org/flywaydb/flyway-core/9.22.3/flyway-core-9.22.3.jar to /home/gradle/.gradle/.tmp/gradle_download3775647951830254933bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-codegen/5.0.0/querydsl-codegen-5.0.0.jar to /home/gradle/.gradle/.tmp/gradle_download7642957994372453734bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/6.1.2/spring-aspects-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download5044024400179442304bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.17/tomcat-embed-el-10.1.17.jar to /home/gradle/.gradle/.tmp/gradle_download12703666463799478302bin
+Cache entries evicted. In-memory cache of /home/gradle/project/.gradle/8.5/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=287, missCount=445, loadSuccessCount=441, loadExceptionCount=0, totalLoadTime=1997440703, evictionCount=41} 
+Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar to /home/gradle/.gradle/.tmp/gradle_download6981663627363236910bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/6.1.2/spring-webmvc-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download17218628524561306908bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/6.1.2/spring-web-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download18370717749143015098bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download6563141928574703866bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download9888210474947819320bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download15518859663670524862bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download13186795864544981713bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download7848176619322792924bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download10267055472509724595bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.15.3/jackson-dataformat-toml-2.15.3.jar to /home/gradle/.gradle/.tmp/gradle_download17720270216689757311bin
+Downloading https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download9912698114543553707bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/querydsl-core/5.0.0/querydsl-core-5.0.0.jar to /home/gradle/.gradle/.tmp/gradle_download12692190167260193515bin
+Downloading https://repo.maven.apache.org/maven2/com/querydsl/codegen-utils/5.0.0/codegen-utils-5.0.0.jar to /home/gradle/.gradle/.tmp/gradle_download15622873509517394501bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-autoconfigure/3.2.1/spring-boot-autoconfigure-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download1084128182544695620bin
+Downloading https://repo.maven.apache.org/maven2/io/github/classgraph/classgraph/4.8.108/classgraph-4.8.108.jar to /home/gradle/.gradle/.tmp/gradle_download13551370680787974365bin
+Downloading https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar to /home/gradle/.gradle/.tmp/gradle_download7625506995935961364bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/3.2.1/spring-boot-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download12389828997451680559bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/6.1.2/spring-context-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download1464319429161266919bin
+Downloading https://repo.maven.apache.org/maven2/org/aspectj/aspectjweaver/1.9.21/aspectjweaver-1.9.21.jar to /home/gradle/.gradle/.tmp/gradle_download7755957734495543721bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/6.1.2/spring-aop-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download9378094237834116426bin
+Downloading https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar to /home/gradle/.gradle/.tmp/gradle_download1042244208463050933bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.2/spring-orm-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download778417376206193422bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.1.2/spring-jdbc-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download12761150332306696510bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar to /home/gradle/.gradle/.tmp/gradle_download13955226342957411980bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/3.2.1/spring-data-commons-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download7552490415001168625bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.1.2/spring-tx-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download7770526661740457533bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/6.1.2/spring-expression-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download17506597193035984230bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/6.1.2/spring-beans-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download938921733629923162bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/6.1.2/spring-core-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download16330826574253168210bin
+Downloading https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar to /home/gradle/.gradle/.tmp/gradle_download11911738856062825308bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-logging/3.2.1/spring-boot-starter-logging-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download3512565442601233773bin
+Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar to /home/gradle/.gradle/.tmp/gradle_download4173270421588000750bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar to /home/gradle/.gradle/.tmp/gradle_download13273541428848505986bin
+Downloading https://repo.maven.apache.org/maven2/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar to /home/gradle/.gradle/.tmp/gradle_download6709386393626998375bin
+Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar to /home/gradle/.gradle/.tmp/gradle_download1153110157365079654bin
+Downloading https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar to /home/gradle/.gradle/.tmp/gradle_download2112850434716276695bin
+Downloading https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar to /home/gradle/.gradle/.tmp/gradle_download1284688170214977339bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar to /home/gradle/.gradle/.tmp/gradle_download2035707160434035991bin
+Cache entries evicted. In-memory cache of /home/gradle/project/.gradle/8.5/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=287, missCount=485, loadSuccessCount=481, loadExceptionCount=0, totalLoadTime=2400393844, evictionCount=81} 
+Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
+Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-observation/1.12.1/micrometer-observation-1.12.1.jar to /home/gradle/.gradle/.tmp/gradle_download11560121489370163894bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.17/tomcat-embed-websocket-10.1.17.jar to /home/gradle/.gradle/.tmp/gradle_download8456219417895199114bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.17/tomcat-embed-core-10.1.17.jar to /home/gradle/.gradle/.tmp/gradle_download16802143844520340141bin
+Downloading https://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar to /home/gradle/.gradle/.tmp/gradle_download2892073550535781450bin
+Downloading https://repo.maven.apache.org/maven2/com/mysema/commons/mysema-commons-lang/0.2.4/mysema-commons-lang-0.2.4.jar to /home/gradle/.gradle/.tmp/gradle_download8992092166972294421bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0.jar to /home/gradle/.gradle/.tmp/gradle_download14414823235679484505bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/6.1.2/spring-jcl-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download15053310205347784449bin
+Downloading https://repo.maven.apache.org/maven2/io/micrometer/micrometer-commons/1.12.1/micrometer-commons-1.12.1.jar to /home/gradle/.gradle/.tmp/gradle_download12345817661456967347bin
+Downloading https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar to /home/gradle/.gradle/.tmp/gradle_download6665271537830855220bin
+Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar to /home/gradle/.gradle/.tmp/gradle_download4323939486949299172bin
+Excluding []
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Skipping task ':compileJava' as it is up-to-date.
+
+> Task :compileJava UP-TO-DATE
+Resolve mutations for :processResources (Thread[Execution worker,5,main]) started.
+:processResources (Thread[Execution worker,5,main]) started.
+
+> Task :processResources UP-TO-DATE
+Caching disabled for task ':processResources' because:
+  Build cache is disabled
+Skipping task ':processResources' as it is up-to-date.
+Resolve mutations for :classes (Thread[Execution worker,5,main]) started.
+:classes (Thread[Execution worker,5,main]) started.
+
+> Task :classes UP-TO-DATE
+Skipping task ':classes' as it has no actions.
+Resolve mutations for :compileTestJava (Thread[Execution worker,5,main]) started.
+:compileTestJava (Thread[Execution worker,5,main]) started.
+
+> Task :compileTestJava
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/3.2.1/spring-boot-starter-test-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download15449557504254610026bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/3.2.1/spring-boot-starter-test-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download1843690318050468207bin
+Downloading https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.pom to /home/gradle/.gradle/.tmp/gradle_download2065790356033420560bin
+Downloading https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.5.0/json-smart-2.5.0.pom to /home/gradle/.gradle/.tmp/gradle_download14828014597907790268bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/3.2.1/spring-boot-test-autoconfigure-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download14567435738493803074bin
+Downloading https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.module to /home/gradle/.gradle/.tmp/gradle_download12979157829931455311bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/3.2.1/spring-boot-test-3.2.1.pom to /home/gradle/.gradle/.tmp/gradle_download16586318176889328105bin
+Downloading https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.pom to /home/gradle/.gradle/.tmp/gradle_download3131935997701144630bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/3.2.1/spring-boot-test-autoconfigure-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download885079845810260649bin
+Downloading https://repo.maven.apache.org/maven2/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.pom to /home/gradle/.gradle/.tmp/gradle_download9151012081235383058bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/3.2.1/spring-boot-test-3.2.1.module to /home/gradle/.gradle/.tmp/gradle_download6393711644198139375bin
+Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/2.2/hamcrest-2.2.pom to /home/gradle/.gradle/.tmp/gradle_download9533836454728439003bin
+Downloading https://repo.maven.apache.org/maven2/org/assertj/assertj-parent/3.24.2/assertj-parent-3.24.2.pom to /home/gradle/.gradle/.tmp/gradle_download17196059505315176016bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download13079502593258657294bin
+Downloading https://repo.maven.apache.org/maven2/org/awaitility/awaitility-parent/4.2.0/awaitility-parent-4.2.0.pom to /home/gradle/.gradle/.tmp/gradle_download13141897598079843496bin
+Downloading https://repo.maven.apache.org/maven2/org/assertj/assertj-build/3.24.2/assertj-build-3.24.2.pom to /home/gradle/.gradle/.tmp/gradle_download7902356893516484238bin
+Downloading https://repo.maven.apache.org/maven2/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.pom to /home/gradle/.gradle/.tmp/gradle_download5541177243930702787bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module to /home/gradle/.gradle/.tmp/gradle_download9638961929979277972bin
+Downloading https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.pom to /home/gradle/.gradle/.tmp/gradle_download1757766239781079965bin
+Downloading https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.pom to /home/gradle/.gradle/.tmp/gradle_download4412227774045374901bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.1.2/spring-test-6.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download15432025782518944200bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom, /home/gradle/.gradle/caches/modules-2/files-2.1/org.junit/junit-bom/5.9.1/ce71051be5ac4cea4e06a25fc100a0e64bcf6a1c/junit-bom-5.9.1.pom]
+Downloading https://repo.maven.apache.org/maven2/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.pom to /home/gradle/.gradle/.tmp/gradle_download7705372552578767084bin
+Downloading https://repo.maven.apache.org/maven2/org/xmlunit/xmlunit-parent/2.9.1/xmlunit-parent-2.9.1.pom to /home/gradle/.gradle/.tmp/gradle_download17195194344094035745bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.1.2/spring-test-6.1.2.module to /home/gradle/.gradle/.tmp/gradle_download1914806619010805834bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.module, /home/gradle/.gradle/caches/modules-2/files-2.1/org.junit/junit-bom/5.9.1/aa05de0691bfa54aa1ef72b25bbb0fcfd6ec480b/junit-bom-5.9.1.module]
+Cache entries evicted. In-memory cache of /home/gradle/project/.gradle/8.5/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=293, missCount=525, loadSuccessCount=521, loadExceptionCount=0, totalLoadTime=2527972433, evictionCount=121} 
+Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
+Downloading https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.pom to /home/gradle/.gradle/.tmp/gradle_download11049729964546161016bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download1011665542730228463bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download11233018363435276953bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download1333076637743682194bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.module to /home/gradle/.gradle/.tmp/gradle_download5834469921187842080bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.module to /home/gradle/.gradle/.tmp/gradle_download5460325901531931910bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.module to /home/gradle/.gradle/.tmp/gradle_download32004485576850237bin
+Downloading https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.pom to /home/gradle/.gradle/.tmp/gradle_download13955407106313553557bin
+Downloading https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.pom to /home/gradle/.gradle/.tmp/gradle_download14638771400874246698bin
+Downloading https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/3.3/objenesis-parent-3.3.pom to /home/gradle/.gradle/.tmp/gradle_download17385352957356818262bin
+Downloading https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.pom to /home/gradle/.gradle/.tmp/gradle_download4464000894255870043bin
+Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.3/asm-9.3.pom to /home/gradle/.gradle/.tmp/gradle_download5761447152257091032bin
+Downloading https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom to /home/gradle/.gradle/.tmp/gradle_download7446385452915745675bin
+Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom to /home/gradle/.gradle/.tmp/gradle_download17780773455709196459bin
+Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.module to /home/gradle/.gradle/.tmp/gradle_download9225058559221470365bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download8146353163367119461bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.module to /home/gradle/.gradle/.tmp/gradle_download17118044653719867838bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.pom to /home/gradle/.gradle/.tmp/gradle_download14182926688843113102bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.module to /home/gradle/.gradle/.tmp/gradle_download13489101557446687954bin
+Excluding []
+Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom to /home/gradle/.gradle/.tmp/gradle_download5107487339713691265bin
+Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.module to /home/gradle/.gradle/.tmp/gradle_download6327226356311576476bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/3.2.1/spring-boot-starter-test-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download13409466423015710918bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/3.2.1/spring-boot-test-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download10659244144253806741bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/3.2.1/spring-boot-test-autoconfigure-3.2.1.jar to /home/gradle/.gradle/.tmp/gradle_download2246112467316839851bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar to /home/gradle/.gradle/.tmp/gradle_download18023557978035237432bin
+Downloading https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar to /home/gradle/.gradle/.tmp/gradle_download13705179353286245638bin
+Downloading https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar to /home/gradle/.gradle/.tmp/gradle_download6231515739713559218bin
+Downloading https://repo.maven.apache.org/maven2/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar to /home/gradle/.gradle/.tmp/gradle_download13147014974580562106bin
+Downloading https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar to /home/gradle/.gradle/.tmp/gradle_download7989548299363699576bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download11479857013739268738bin
+Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar to /home/gradle/.gradle/.tmp/gradle_download9486040925261263016bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download1805748166081398550bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download12288433026923623497bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download7658904429459980061bin
+Downloading https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar to /home/gradle/.gradle/.tmp/gradle_download16101622310413373753bin
+Downloading https://repo.maven.apache.org/maven2/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar to /home/gradle/.gradle/.tmp/gradle_download1883446529388019717bin
+Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.1.2/spring-test-6.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download867018389874718500bin
+Downloading https://repo.maven.apache.org/maven2/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar to /home/gradle/.gradle/.tmp/gradle_download1812675026008951195bin
+Downloading https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar to /home/gradle/.gradle/.tmp/gradle_download12153157143523640823bin
+Cache entries evicted. In-memory cache of /home/gradle/project/.gradle/8.5/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=304, missCount=565, loadSuccessCount=561, loadExceptionCount=0, totalLoadTime=2583355162, evictionCount=161} 
+Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
+Downloading https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download6722171973226148161bin
+Downloading https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar to /home/gradle/.gradle/.tmp/gradle_download15858942693252928465bin
+Downloading https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar to /home/gradle/.gradle/.tmp/gradle_download8727285085754089532bin
+Downloading https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar to /home/gradle/.gradle/.tmp/gradle_download15733815091656747052bin
+Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.3/asm-9.3.jar to /home/gradle/.gradle/.tmp/gradle_download17208061663136289805bin
+Downloading https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar to /home/gradle/.gradle/.tmp/gradle_download7339692481501424491bin
+Downloading https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar to /home/gradle/.gradle/.tmp/gradle_download6374083783045928474bin
+Downloading https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download1373258175094127168bin
+Excluding []
+Caching disabled for task ':compileTestJava' because:
+  Build cache is disabled
+Task ':compileTestJava' is not up-to-date because:
+  Input property 'stableSources' file /home/gradle/project/src/test/java/com/sorin/glossary/domain/term/presentation/TermControllerTest.java has changed.
+Created classpath snapshot for incremental compilation in 10.876 secs.
+Compiling with toolchain '/opt/java/openjdk'.
+Compiling with JDK Java compiler API.
+Incremental compilation of 1 classes completed in 14.948 secs.
+Class dependency analysis for incremental compilation took 0.063 secs.
+Resolve mutations for :processTestResources (Thread[Execution worker,5,main]) started.
+:processTestResources (Thread[Execution worker,5,main]) started.
+
+> Task :processTestResources UP-TO-DATE
+Caching disabled for task ':processTestResources' because:
+  Build cache is disabled
+Skipping task ':processTestResources' as it is up-to-date.
+Resolve mutations for :testClasses (Thread[Execution worker,5,main]) started.
+:testClasses (Thread[Execution worker,5,main]) started.
+
+> Task :testClasses
+Skipping task ':testClasses' as it has no actions.
+Resolve mutations for :test (Thread[Execution worker,5,main]) started.
+:test (Thread[Execution worker,5,main]) started.
+
+> Task :test
+Downloading https://repo.maven.apache.org/maven2/com/h2database/h2/2.2.224/h2-2.2.224.pom to /home/gradle/.gradle/.tmp/gradle_download5906650713322564361bin
+Downloading https://repo.maven.apache.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.pom to /home/gradle/.gradle/.tmp/gradle_download17981765899084804806bin
+Downloading https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.pom to /home/gradle/.gradle/.tmp/gradle_download5050651594276727845bin
+Downloading https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.module to /home/gradle/.gradle/.tmp/gradle_download13843946428521371183bin
+Excluding []
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar to /home/gradle/.gradle/.tmp/gradle_download2983221962625321788bin
+Downloading https://repo.maven.apache.org/maven2/com/h2database/h2/2.2.224/h2-2.2.224.jar to /home/gradle/.gradle/.tmp/gradle_download11818925588883100864bin
+Downloading https://repo.maven.apache.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar to /home/gradle/.gradle/.tmp/gradle_download4176860981526173541bin
+Downloading https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar to /home/gradle/.gradle/.tmp/gradle_download3391263706715532038bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar to /home/gradle/.gradle/.tmp/gradle_download8600446920021303827bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download6020184116870055318bin
+Downloading https://repo.maven.apache.org/maven2/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar to /home/gradle/.gradle/.tmp/gradle_download3275098721302515815bin
+Downloading https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar to /home/gradle/.gradle/.tmp/gradle_download13358761432788165737bin
+Downloading https://repo.maven.apache.org/maven2/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar to /home/gradle/.gradle/.tmp/gradle_download2569466802474180765bin
+Downloading https://repo.maven.apache.org/maven2/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download3291393399360117700bin
+Downloading https://repo.maven.apache.org/maven2/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar to /home/gradle/.gradle/.tmp/gradle_download11766539076193754077bin
+Downloading https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.jar to /home/gradle/.gradle/.tmp/gradle_download8705242519145784221bin
+Downloading https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar to /home/gradle/.gradle/.tmp/gradle_download11794119623460465750bin
+Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar to /home/gradle/.gradle/.tmp/gradle_download9554090557688257999bin
+Caching disabled for task ':test' because:
+  Build cache is disabled
+Task ':test' is not up-to-date because:
+  Task has failed previously.
+Starting process 'Gradle Test Executor 1'. Working directory: /home/gradle/project Command: /opt/java/openjdk/bin/java -Dorg.gradle.internal.worker.tmpdir=/home/gradle/project/build/tmp/test/work -Dorg.gradle.native=false @/home/gradle/.gradle/.tmp/gradle-worker-classpath7922517259231315303txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+Successfully started process 'Gradle Test Executor 1'
+
+Gradle Test Executor 1 started executing tests.
+
+> Task :test
+
+TermControllerTest STANDARD_OUT
+    04:07:16.972 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sorin.glossary.domain.term.presentation.TermControllerTest]: TermControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    04:07:20.173 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sorin.glossary.GlossaryApplication for test class com.sorin.glossary.domain.term.presentation.TermControllerTest
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+     :: Spring Boot ::                (v3.2.1)
+
+    2025-12-23T04:07:29.190Z  INFO 170 --- [    Test worker] c.s.g.d.t.p.TermControllerTest           : Starting TermControllerTest using Java 17.0.10 with PID 170 (started by root in /home/gradle/project)
+    2025-12-23T04:07:29.196Z  INFO 170 --- [    Test worker] c.s.g.d.t.p.TermControllerTest           : No active profile set, falling back to 1 default profile: "default"
+    2025-12-23T04:07:29.391Z DEBUG 170 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@78de58ea
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :test
+    2025-12-23T04:07:51.326Z DEBUG 170 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+    2025-12-23T04:07:52.807Z DEBUG 170 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+    2025-12-23T04:07:53.258Z DEBUG 170 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+    2025-12-23T04:07:54.031Z DEBUG 170 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+    2025-12-23T04:07:55.351Z  INFO 170 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+    2025-12-23T04:07:55.351Z  INFO 170 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+    2025-12-23T04:07:55.365Z  INFO 170 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 12 ms
+    2025-12-23T04:07:55.533Z  INFO 170 --- [    Test worker] c.s.g.d.t.p.TermControllerTest           : Started TermControllerTest in 34.193 seconds (process running for 44.796)
+
+TermControllerTest > 용어 검색 API Test STANDARD_OUT
+    2025-12-23T04:07:56.869Z DEBUG 170 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sorin.glossary.domain.term.presentation.TermController#searchTerms(TermSearchCondition, Pageable)
+    2025-12-23T04:07:57.947Z DEBUG 170 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+    2025-12-23T04:07:57.959Z DEBUG 170 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.sorin.glossary.domain.term.dto.TermResponse instances]
+    2025-12-23T04:07:58.226Z DEBUG 170 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sorin.glossary.global.error.GlobalExceptionHandler#handleException(Exception, WebRequest)
+    2025-12-23T04:07:58.247Z DEBUG 170 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json' in response
+    2025-12-23T04:07:58.316Z DEBUG 170 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ProblemDetail[type='about:blank', title='Internal Server Error', status=500, detail='Failed to write (truncated)...]
+    2025-12-23T04:07:58.317Z DEBUG 170 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: (was java.lang.UnsupportedOperationException)]
+
+    MockHttpServletRequest:
+          HTTP Method = GET
+          Request URI = /api/v1/terms
+           Parameters = {keyword=[테스트], page=[0], size=[10]}
+              Headers = []
+                 Body = null
+        Session Attrs = {}
+
+    Handler:
+                 Type = com.sorin.glossary.domain.term.presentation.TermController
+               Method = com.sorin.glossary.domain.term.presentation.TermController#searchTerms(TermSearchCondition, Pageable)
+
+    Async:
+        Async started = false
+         Async result = null
+
+    Resolved Exception:
+                 Type = org.springframework.http.converter.HttpMessageNotWritableException
+
+    ModelAndView:
+            View name = null
+                 View = null
+                Model = null
+
+    FlashMap:
+           Attributes = null
+
+    MockHttpServletResponse:
+               Status = 500
+        Error message = null
+              Headers = [Content-Type:"application/json"]
+         Content type = application/json
+                 Body = {"type":"about:blank","title":"Internal Server Error","status":500,"detail":"Failed to write request","instance":"/api/v1/terms"}
+        Forwarded URL = null
+       Redirected URL = null
+              Cookies = []
+
+    MockHttpServletRequest:
+          HTTP Method = GET
+          Request URI = /api/v1/terms
+           Parameters = {keyword=[테스트], page=[0], size=[10]}
+              Headers = []
+                 Body = null
+        Session Attrs = {}
+
+    Handler:
+                 Type = com.sorin.glossary.domain.term.presentation.TermController
+               Method = com.sorin.glossary.domain.term.presentation.TermController#searchTerms(TermSearchCondition, Pageable)
+
+    Async:
+        Async started = false
+         Async result = null
+
+    Resolved Exception:
+                 Type = org.springframework.http.converter.HttpMessageNotWritableException
+
+    ModelAndView:
+            View name = null
+                 View = null
+                Model = null
+
+    FlashMap:
+           Attributes = null
+
+    MockHttpServletResponse:
+               Status = 500
+        Error message = null
+              Headers = [Content-Type:"application/json"]
+         Content type = application/json
+                 Body = {"type":"about:blank","title":"Internal Server Error","status":500,"detail":"Failed to write request","instance":"/api/v1/terms"}
+        Forwarded URL = null
+       Redirected URL = null
+              Cookies = []
+
+Gradle Test Executor 1 finished executing tests.
+2025-12-23T04:07:58.644Z DEBUG 170 --- [ionShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@78de58ea, started on Tue Dec 23 04:07:29 UTC 2025
+
+1 test completed, 1 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///home/gradle/project/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 1m 46s
+
+> Task :test FAILED
+
+TermControllerTest > 용어 검색 API Test FAILED
+    java.lang.AssertionError: Status expected:<200> but was:<500>
+        at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+        at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+        at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+        at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+        at com.sorin.glossary.domain.term.presentation.TermControllerTest.searchTerms(TermControllerTest.java:61)
+Finished generating test XML results (0.037 secs) into: /home/gradle/project/build/test-results/test
+Generating HTML test report...
+Finished generating test html results (0.134 secs) into: /home/gradle/project/build/reports/tests/test
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+5 actionable tasks: 2 executed, 3 up-to-date
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.

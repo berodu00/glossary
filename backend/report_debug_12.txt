@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - ProcessRepositoryTest</title>
+<title>Test results - TermControllerTest</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>ProcessRepositoryTest</h1>
+<h1>TermControllerTest</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/com.sorin.glossary.domain.process.domain.html">com.sorin.glossary.domain.process.domain</a> &gt; ProcessRepositoryTest</div>
+<a href="../packages/com.sorin.glossary.domain.term.presentation.html">com.sorin.glossary.domain.term.presentation</a> &gt; TermControllerTest</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">4.648s</div>
+<div class="counter">2.265s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">66%</div>
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -73,12 +73,15 @@
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="saveAndFind()"></a>
-<h3 class="failures">공정을 저장하고 조회한다</h3>
+<a name="searchTerms()"></a>
+<h3 class="failures">용어 검색 API Test</h3>
 <span class="code">
-<pre>java.lang.AssertionError: 
-Expecting actual not to be null
-	at com.sorin.glossary.domain.process.domain.ProcessRepositoryTest.saveAndFind(ProcessRepositoryTest.java:34)
+<pre>java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;500&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.sorin.glossary.domain.term.presentation.TermControllerTest.searchTerms(TermControllerTest.java:67)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -179,21 +182,9 @@ Expecting actual not to be null
 </tr>
 </thead>
 <tr>
-<td class="success">DisplayOrder 기본값은 0이다</td>
-<td class="success">defaultDisplayOrder()</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">공정 명칭은 중복될 수 없다</td>
-<td class="success">duplicateName()</td>
-<td class="success">4.544s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="failures">공정을 저장하고 조회한다</td>
-<td class="failures">saveAndFind()</td>
-<td class="failures">0.097s</td>
+<td class="failures">용어 검색 API Test</td>
+<td class="failures">searchTerms()</td>
+<td class="failures">2.265s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -201,8 +192,8 @@ Expecting actual not to be null
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>03:29:51.801 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sorin.glossary.domain.process.domain.ProcessRepositoryTest]: ProcessRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-03:29:53.560 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sorin.glossary.GlossaryApplication for test class com.sorin.glossary.domain.process.domain.ProcessRepositoryTest
+<pre>04:39:54.332 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sorin.glossary.domain.term.presentation.TermControllerTest]: TermControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+04:39:56.244 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sorin.glossary.GlossaryApplication for test class com.sorin.glossary.domain.term.presentation.TermControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -212,39 +203,98 @@ Expecting actual not to be null
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2025-12-23T03:29:58.795Z  INFO 171 --- [glossary-service] [    Test worker] c.s.g.d.p.domain.ProcessRepositoryTest   : Starting ProcessRepositoryTest using Java 17.0.10 with PID 171 (started by root in /home/gradle/project)
-2025-12-23T03:29:58.801Z  INFO 171 --- [glossary-service] [    Test worker] c.s.g.d.p.domain.ProcessRepositoryTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-12-23T03:30:02.179Z  INFO 171 --- [glossary-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-23T03:30:03.336Z  INFO 171 --- [glossary-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 716 ms. Found 2 JPA repository interfaces.
-2025-12-23T03:30:03.841Z  INFO 171 --- [glossary-service] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2025-12-23T03:30:05.444Z  INFO 171 --- [glossary-service] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:9d38c980-443b-453b-8daa-e8b8466914a7;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2025-12-23T03:30:09.145Z  INFO 171 --- [glossary-service] [    Test worker] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
-2025-12-23T03:30:09.145Z  INFO 171 --- [glossary-service] [    Test worker] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
-2025-12-23T03:30:09.145Z  INFO 171 --- [glossary-service] [    Test worker] o.f.c.internal.license.VersionPrinter    : 
-2025-12-23T03:30:09.591Z  INFO 171 --- [glossary-service] [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:9d38c980-443b-453b-8daa-e8b8466914a7 (H2 2.2)
-2025-12-23T03:30:09.629Z  WARN 171 --- [glossary-service] [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-12-23T03:30:09.854Z  INFO 171 --- [glossary-service] [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; does not exist yet
-2025-12-23T03:30:09.870Z  INFO 171 --- [glossary-service] [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.149s)
-2025-12-23T03:30:09.911Z  INFO 171 --- [glossary-service] [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-2025-12-23T03:30:10.083Z  INFO 171 --- [glossary-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-2025-12-23T03:30:10.148Z  INFO 171 --- [glossary-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;PUBLIC&quot; to version &quot;1 - init schema&quot;
-2025-12-23T03:30:10.251Z  INFO 171 --- [glossary-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;PUBLIC&quot;, now at version v1 (execution time 00:00.071s)
-2025-12-23T03:30:11.158Z  INFO 171 --- [glossary-service] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-23T03:30:12.586Z  INFO 171 --- [glossary-service] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-12-23T03:30:13.166Z  INFO 171 --- [glossary-service] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-23T03:30:17.206Z  INFO 171 --- [glossary-service] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-23T03:30:17.889Z  WARN 171 --- [glossary-service] [    Test worker] org.hibernate.dialect.Dialect            : HHH000511: The 2.2.0 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 12.0.0. Check the community dialects project for available legacy versions.
-2025-12-23T03:30:17.962Z  WARN 171 --- [glossary-service] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-23T03:30:31.142Z  INFO 171 --- [glossary-service] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-23T03:30:31.474Z  INFO 171 --- [glossary-service] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-23T03:30:34.757Z  INFO 171 --- [glossary-service] [    Test worker] c.s.g.d.p.domain.ProcessRepositoryTest   : Started ProcessRepositoryTest in 40.401 seconds (process running for 48.019)
-Hibernate: insert into processes (created_at,display_order,name) values (?,?,?)
-Hibernate: insert into processes (created_at,display_order,name) values (?,?,?)
-2025-12-23T03:30:39.074Z  WARN 171 --- [glossary-service] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
-2025-12-23T03:30:39.074Z ERROR 171 --- [glossary-service] [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: &quot;PUBLIC.CONSTRAINT_INDEX_6 ON PUBLIC.PROCESSES(NAME NULLS FIRST) VALUES ( /* 1 */ U&amp;'\\c81c\\b828' )&quot;; SQL statement:
-insert into processes (created_at,display_order,name) values (?,?,?) [23505-224]
-Hibernate: insert into processes (created_at,display_order,name) values (?,?,?)
-Hibernate: insert into processes (created_at,display_order,name) values (?,?,?)
+2025-12-23T04:40:02.819Z  INFO 183 --- [    Test worker] c.s.g.d.t.p.TermControllerTest           : Starting TermControllerTest using Java 17.0.10 with PID 183 (started by root in /home/gradle/project)
+2025-12-23T04:40:02.825Z  INFO 183 --- [    Test worker] c.s.g.d.t.p.TermControllerTest           : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-12-23T04:40:03.069Z DEBUG 183 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@22d9c961
+2025-12-23T04:40:24.152Z DEBUG 183 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2025-12-23T04:40:26.843Z DEBUG 183 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-12-23T04:40:27.415Z DEBUG 183 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-23T04:40:28.053Z DEBUG 183 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-23T04:40:30.731Z  INFO 183 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-23T04:40:30.732Z  INFO 183 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-23T04:40:30.755Z  INFO 183 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 16 ms
+2025-12-23T04:40:30.914Z  INFO 183 --- [    Test worker] c.s.g.d.t.p.TermControllerTest           : Started TermControllerTest in 33.715 seconds (process running for 42.555)
+2025-12-23T04:40:31.937Z DEBUG 183 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.sorin.glossary.domain.term.presentation.TermController#searchTerms(TermSearchCondition, Pageable)
+2025-12-23T04:40:32.771Z DEBUG 183 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-12-23T04:40:32.777Z DEBUG 183 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.sorin.glossary.domain.term.dto.TermResponse instances]
+2025-12-23T04:40:33.014Z DEBUG 183 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.sorin.glossary.global.error.GlobalExceptionHandler#handleException(Exception, WebRequest)
+2025-12-23T04:40:33.034Z DEBUG 183 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Found 'Content-Type:application/json' in response
+2025-12-23T04:40:33.111Z DEBUG 183 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ProblemDetail[type='about:blank', title='Internal Server Error', status=500, detail='Failed to write (truncated)...]
+2025-12-23T04:40:33.117Z DEBUG 183 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: (was java.lang.UnsupportedOperationException)]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/terms
+       Parameters = {keyword=[테스트], page=[0], size=[10]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.sorin.glossary.domain.term.presentation.TermController
+           Method = com.sorin.glossary.domain.term.presentation.TermController#searchTerms(TermSearchCondition, Pageable)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.http.converter.HttpMessageNotWritableException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 500
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;type&quot;:&quot;about:blank&quot;,&quot;title&quot;:&quot;Internal Server Error&quot;,&quot;status&quot;:500,&quot;detail&quot;:&quot;Failed to write request&quot;,&quot;instance&quot;:&quot;/api/v1/terms&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/v1/terms
+       Parameters = {keyword=[테스트], page=[0], size=[10]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.sorin.glossary.domain.term.presentation.TermController
+           Method = com.sorin.glossary.domain.term.presentation.TermController#searchTerms(TermSearchCondition, Pageable)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.http.converter.HttpMessageNotWritableException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 500
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;type&quot;:&quot;about:blank&quot;,&quot;title&quot;:&quot;Internal Server Error&quot;,&quot;status&quot;:500,&quot;detail&quot;:&quot;Failed to write request&quot;,&quot;instance&quot;:&quot;/api/v1/terms&quot;}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
 </pre>
 </span>
 </div>
@@ -256,7 +306,7 @@ Hibernate: insert into processes (created_at,display_order,name) values (?,?,?)
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at Dec 23, 2025, 3:30:52 AM</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at Dec 23, 2025, 4:40:33 AM</p>
 </div>
 </div>
 </body>
