@@ -36,6 +36,10 @@ public class QTerm extends EntityPathBase<Term> {
 
     public final StringPath nameEn = createString("nameEn");
 
+    public final StringPath nameInitials = createString("nameInitials");
+
+    public final StringPath nameJamo = createString("nameJamo");
+
     public final StringPath nameKo = createString("nameKo");
 
     public final StringPath photoUrl = createString("photoUrl");

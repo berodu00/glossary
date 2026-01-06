@@ -53,6 +53,9 @@ public class Suggestion {
     @JoinColumn(name = "approved_term_id")
     private Term approvedTerm;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @CreatedDate
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -61,12 +64,14 @@ public class Suggestion {
     private LocalDateTime reviewedAt;
 
     @Builder
-    public Suggestion(String requesterId, String nameKo, String nameEn, String description, Process process) {
+    public Suggestion(String requesterId, String nameKo, String nameEn, String description, Process process,
+            String imageUrl) {
         this.requesterId = requesterId;
         this.nameKo = nameKo;
         this.nameEn = nameEn;
         this.description = description;
         this.process = process;
+        this.imageUrl = imageUrl;
         this.status = SuggestionStatus.PENDING;
     }
 

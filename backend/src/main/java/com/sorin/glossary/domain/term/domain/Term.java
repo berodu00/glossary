@@ -50,6 +50,12 @@ public class Term {
     @Column(name = "initial_en", nullable = false, length = 1)
     private String initialEn;
 
+    @Column(name = "name_jamo")
+    private String nameJamo;
+
+    @Column(name = "name_initials")
+    private String nameInitials;
+
     @CreatedDate
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -81,9 +87,11 @@ public class Term {
         this.photoUrl = photoUrl;
         this.updatedBy = updatedBy;
 
-        // Auto-generate initials
+        // Auto-generate initials & Jamo
         this.initialKo = TermUtils.getInitialKo(nameKo);
         this.initialEn = TermUtils.getInitialEn(nameEn);
+        this.nameJamo = TermUtils.extractJamo(nameKo);
+        this.nameInitials = TermUtils.extractInitials(nameKo);
 
         if (processes != null) {
             this.processes = processes;
@@ -102,8 +110,11 @@ public class Term {
         this.description = description;
         this.photoUrl = photoUrl;
         this.updatedBy = updatedBy;
+
         this.initialKo = TermUtils.getInitialKo(nameKo);
         this.initialEn = TermUtils.getInitialEn(nameEn);
+        this.nameJamo = TermUtils.extractJamo(nameKo);
+        this.nameInitials = TermUtils.extractInitials(nameKo);
 
         if (processes != null) {
             this.processes = processes;

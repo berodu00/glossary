@@ -29,12 +29,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
     }, []);
 
-    const login = async (userId: string) => {
+    const login = async (userId: string, role: string = 'ROLE_USER') => {
         try {
-            const { accessToken } = await authApi.devLogin(userId, 'ROLE_USER');
+            const { accessToken } = await authApi.devLogin(userId, role);
             localStorage.setItem('token', accessToken);
 
-            const newUser = { userId, role: 'ROLE_USER' };
+            const newUser = { userId, role };
             localStorage.setItem('user', JSON.stringify(newUser));
             setUser(newUser);
 

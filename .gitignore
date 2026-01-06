@@ -30,4 +30,9 @@ backend/.gradle/
 backend/out/
 backend/__pycache__/
 
+
+### Test Artifacts
+backend/testsprite_tests/
+backend/report_debug_*.txt
+
 *.log

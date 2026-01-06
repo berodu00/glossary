@@ -70,6 +70,8 @@
 | photo_url | VARCHAR(512) |  | 이미지 경로 |
 | **initial_ko** | CHAR(1) | NOT NULL | 한글 초성 (ㄱ~ㅎ) |
 | **initial_en** | CHAR(1) | NOT NULL | 영문 초성 (A~Z, 대문자 저장) |
+| **name_jamo** | VARCHAR(255) |  | 한글 자모 분리 (예: ㅌㅔㅅㅡㅌㅡ) - **V2 Added** |
+| **name_initials** | VARCHAR(255) |  | 한글 초성 전체 (예: ㅌㅅㅌ) - **V2 Added** |
 | created_at | TIMESTAMP | DEFAULT NOW() | 생성 일시 |
 | updated_at | TIMESTAMP |  | 수정 일시 |
 | updated_by | VARCHAR(50) |  | 수정자 사번 |
@@ -135,6 +137,9 @@
 
 
 * **구현 규칙**: **모든 검색 쿼리는 `deleted_at IS NULL` 조건을 기본으로 포함한다.**
+* **고급 검색 (Jamo Search)**:
+    * 검색어가 모두 자음(초성)으로만 구성된 경우 `name_initials` 컬럼을 검색한다. (예: 'ㅌㅅㅌ' -> '테스트')
+    * 그 외의 경우 `name_ko` OR `name_jamo` OR `name_en` OR `abbreviation`을 검색한다. (예: 'ㅌ' -> '테스트', '테스' -> '테스트')
 
 ### 5.3 용어 상세 조회 (GET /api/v1/terms/{id})
 
@@ -142,7 +147,16 @@
 
 ## 6. 관리자(Admin) 기능
 
-(기존 명세 유지: 공정 마스터 CRUD, 용어 제안 승인/반려 로직)
+### 6.1 제안 관리
+* **목록 조회**: 대기 중(PENDING)인 제안 목록을 조회한다.
+* **상세 보기 (Modal)**: 
+    * 리스트의 항목 클릭 시 모달(Modal) 팝업을 통해 상세 정보를 제공한다.
+    * 포함 정보: 용어명(한/영), 설명, 이미지, 신청자 정보, 신청일.
+* **승인/반려**:
+    * 모달 하단에서 승인(Approve) 또는 반려(Reject) 처리를 수행한다.
+    * 반려 시 반려 사유(Reason)를 입력받는다.
+
+(기존 명세 유지: 공정 마스터 CRUD)
 
 ## 7. 프론트엔드 아키텍처
 

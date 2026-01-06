@@ -31,24 +31,63 @@ export const FilterPanel = ({
         staleTime: 600000,
     });
 
+    // Helper to determine if a process is visually selected
+    // Helper to determine if a process is visually selected
+    const isProcessSelected = (processId: number) => {
+        if (selectedProcesses.includes(-1)) return false; // Explicitly None
+        if (selectedProcesses.length === 0) return true; // Empty means All
+        return selectedProcesses.includes(processId);
+    };
+
+    const isAllSelected = selectedProcesses.length === 0 && !selectedProcesses.includes(-1);
+
     const toggleProcess = (processId: number) => {
-        if (selectedProcesses.includes(processId)) {
-            onProcessChange(selectedProcesses.filter(p => p !== processId));
+        // Remove -1 if present
+        const currentSelection = selectedProcesses.filter(id => id !== -1);
+
+        if (currentSelection.length === 0) {
+            // currently "All". Clicking one selects ONLY that one.
+            onProcessChange([processId]);
         } else {
-            onProcessChange([...selectedProcesses, processId]);
+            if (currentSelection.includes(processId)) {
+                const newSelection = currentSelection.filter(p => p !== processId);
+                // If last one deselected, revert to All (Empty)
+                if (newSelection.length === 0) {
+                    onProcessChange([]);
+                } else {
+                    onProcessChange(newSelection);
+                }
+            } else {
+                onProcessChange([...currentSelection, processId]);
+            }
+        }
+    };
+
+    const handleSelectAll = () => {
+        if (isAllSelected) {
+            // If All selected, clicking means Deselect All (None)
+            onProcessChange([-1]);
+        } else {
+            // Any other state -> Select All
+            onProcessChange([]);
         }
     };
 
     return (
-        <section className="max-w-4xl mx-auto px-4 -mt-8 relative z-10 animate-slide-up">
+        <section className="w-full relative z-10 animate-slide-up">
             <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
-                {/* Tab Header */}
-                <div className="flex border-b border-slate-100">
+                {/* Tab Header (Pill Style) */}
+                <div className="bg-slate-50 p-1.5 flex items-center justify-center gap-1 border-b border-slate-100">
+                    {/* Image shows a wide toggle bar across the top or centered? Usually centered or full width. 
+                         The image shows a "Basic" on left, "Process" on right, background gray. 
+                         Let's assume full width toggle. */}
                     <button
                         onClick={() => onTabChange('BASIC')}
                         className={clsx(
-                            "flex-1 py-4 text-center font-medium transition-colors",
-                            activeTab === 'BASIC' ? "text-primary-600 bg-primary-50/50" : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+                            "flex-1 py-3 text-sm md:text-base font-bold rounded-xl transition-all duration-200",
+                            activeTab === 'BASIC'
+                                ? "bg-white text-slate-800 shadow-sm border border-slate-200"
+                                : "text-slate-400 hover:text-slate-600 hover:bg-slate-100"
                         )}
                     >
                         기본용어
@@ -56,8 +95,10 @@ export const FilterPanel = ({
                     <button
                         onClick={() => onTabChange('PROCESS')}
                         className={clsx(
-                            "flex-1 py-4 text-center font-medium transition-colors border-l border-slate-100",
-                            activeTab === 'PROCESS' ? "text-primary-600 bg-primary-50/50" : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+                            "flex-1 py-3 text-sm md:text-base font-bold rounded-xl transition-all duration-200",
+                            activeTab === 'PROCESS'
+                                ? "bg-white text-slate-800 shadow-sm border border-slate-200"
+                                : "text-slate-400 hover:text-slate-600 hover:bg-slate-100"
                         )}
                     >
                         공정용어
@@ -65,100 +106,96 @@ export const FilterPanel = ({
                 </div>
 
                 {/* Filter Body */}
-                <div className="p-6 md:p-8 space-y-8">
+                <div className="p-4 md:p-6 space-y-4">
 
                     {/* Initials Filter */}
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                            <span className="w-1 h-4 bg-primary-500 rounded-full"></span>
-                            국문순
-                        </div>
-                        <div className="flex flex-wrap gap-2 md:gap-3">
-                            {initialsKo.map(char => (
-                                <button
-                                    key={char}
-                                    onClick={() => onInitialChange(selectedInitial === char ? null : char)}
-                                    className={clsx(
-                                        "w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center text-sm font-medium transition-all duration-200",
-                                        selectedInitial === char
-                                            ? "bg-primary-600 text-white shadow-md shadow-primary-200 transform scale-105"
-                                            : "bg-slate-50 text-slate-600 hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-200"
-                                    )}
-                                >
-                                    {char}
-                                </button>
-                            ))}
+                    <div className="space-y-2">
+                        {/* Korean Initials */}
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 bg-white p-2 rounded-lg border border-slate-100">
+                            <div className="flex-shrink-0 flex items-center gap-2 text-sm font-bold text-blue-500 min-w-[3.5rem] pl-1">
+                                국문순
+                            </div>
+                            <div className="flex flex-wrap gap-1">
+                                {initialsKo.map(char => (
+                                    <button
+                                        key={char}
+                                        onClick={() => onInitialChange(selectedInitial === char ? null : char)}
+                                        className={clsx(
+                                            "w-7 h-7 sm:w-8 sm:h-8 rounded flex items-center justify-center text-xs sm:text-sm font-medium transition-all duration-200 border",
+                                            selectedInitial === char
+                                                ? "bg-blue-500 text-white border-blue-500 shadow-sm"
+                                                : "bg-white text-slate-500 border-transparent hover:bg-slate-50 hover:border-slate-200"
+                                        )}
+                                    >
+                                        {char}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
 
-                        <div className="flex items-center gap-2 text-sm font-semibold text-slate-800 mt-6">
-                            <span className="w-1 h-4 bg-primary-500 rounded-full"></span>
-                            영문순
-                        </div>
-                        <div className="flex flex-wrap gap-2 md:gap-3">
-                            {initialsEn.map(char => (
-                                <button
-                                    key={char}
-                                    onClick={() => onInitialChange(selectedInitial === char ? null : char)}
-                                    className={clsx(
-                                        "w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center text-sm font-medium transition-all duration-200",
-                                        selectedInitial === char
-                                            ? "bg-primary-600 text-white shadow-md shadow-primary-200 transform scale-105"
-                                            : "bg-slate-50 text-slate-600 hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-200"
-                                    )}
-                                >
-                                    {char}
-                                </button>
-                            ))}
+                        {/* English Initials */}
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 bg-white p-2 rounded-lg border border-slate-100">
+                            <div className="flex-shrink-0 flex items-center gap-2 text-sm font-bold text-blue-500 min-w-[3.5rem] pl-1">
+                                영문순
+                            </div>
+                            <div className="flex flex-wrap gap-1">
+                                {initialsEn.map(char => (
+                                    <button
+                                        key={char}
+                                        onClick={() => onInitialChange(selectedInitial === char ? null : char)}
+                                        className={clsx(
+                                            "w-7 h-7 sm:w-8 sm:h-8 rounded flex items-center justify-center text-xs sm:text-sm font-medium transition-all duration-200 border",
+                                            selectedInitial === char
+                                                ? "bg-blue-500 text-white border-blue-500 shadow-sm"
+                                                : "bg-white text-slate-500 border-transparent hover:bg-slate-50 hover:border-slate-200"
+                                        )}
+                                    >
+                                        {char}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    {/* Process Filter - Only active if Process Tab is selected, OR always visible? Design says FilterPanel has Tabs. 
-                        Usually tabs toggle visibility. Let's assume Process Filter is always visible or conditional? 
-                        The original design had them in one panel. Let's keep them all visible for now or follow tab logic. 
-                        Based on screenshot, it looks like a single panel controls everything. 
-                        Let's show Process Filter only if activeTab === 'PROCESS' OR always? 
-                        The screenshot shows "기본용어" / "공정용어" tabs on top. 
-                        And below it shows initials. 
-                        Below that "전체선택"... this looks like the Process Filter.
-                        So maybe Process Filter is ONLY for "공정용어" tab?
-                        Let's act as if they are separate modes. 
-                    */}
+                    {/* Process Filter - Chip Grid Style */}
                     {activeTab === 'PROCESS' && (
-                        <div className="pt-6 border-t border-slate-100 animate-fade-in">
-                            <div className="flex items-center justify-between mb-4">
-                                <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-                                    <Filter className="w-4 h-4 text-primary-500" />
-                                    공정별 필터
-                                </div>
+                        <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 animate-fade-in">
+                            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">
+                                {/* Select All Button */}
                                 <button
-                                    onClick={() => onProcessChange([])}
-                                    className="text-xs text-slate-400 hover:text-primary-600 underline"
+                                    onClick={handleSelectAll}
+                                    className="flex items-center gap-2 px-3 py-2 bg-white rounded border border-slate-200 hover:border-slate-300 transition-colors shadow-sm text-left group"
                                 >
-                                    초기화
+                                    <div className={clsx(
+                                        "w-4 h-4 border rounded flex items-center justify-center transition-colors flex-shrink-0",
+                                        isAllSelected ? "bg-transparent border-slate-800" : "border-slate-300 bg-transparent group-hover:border-slate-400"
+                                    )}>
+                                        {isAllSelected && <Check className="w-3 h-3 text-slate-800" strokeWidth={3} />}
+                                    </div>
+                                    <span className={clsx("text-xs font-semibold truncate", isAllSelected ? "text-slate-800" : "text-slate-600")}>
+                                        전체선택
+                                    </span>
                                 </button>
-                            </div>
 
-                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                                 {processes.map(process => {
-                                    const isSelected = selectedProcesses.includes(process.id);
+                                    const isSelected = isProcessSelected(process.id);
+                                    const displayName = process.name.replace(/\s*\(.*?\)\s*/g, '');
+
                                     return (
                                         <button
                                             key={process.id}
                                             onClick={() => toggleProcess(process.id)}
-                                            className={clsx(
-                                                "flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-left transition-all duration-200 border",
-                                                isSelected
-                                                    ? "bg-emerald-50 border-emerald-200 text-emerald-700 shadow-sm"
-                                                    : "bg-white border-slate-200 text-slate-600 hover:border-blue-200 hover:bg-slate-50"
-                                            )}
+                                            className="flex items-center gap-2 px-3 py-2 bg-white rounded border border-slate-200 hover:border-slate-300 transition-colors shadow-sm text-left group"
                                         >
                                             <div className={clsx(
-                                                "w-4 h-4 rounded border flex items-center justify-center transition-colors",
-                                                isSelected ? "bg-emerald-500 border-transparent" : "border-slate-300 bg-white"
+                                                "w-4 h-4 border rounded flex items-center justify-center transition-colors flex-shrink-0",
+                                                isSelected ? "bg-transparent border-slate-800" : "border-slate-300 bg-transparent group-hover:border-slate-400"
                                             )}>
-                                                {isSelected && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                                                {isSelected && <Check className="w-3 h-3 text-slate-800" strokeWidth={3} />}
                                             </div>
-                                            <span className="truncate">{process.name}</span>
+                                            <span className={clsx("text-xs font-medium truncate", isSelected ? "text-slate-800" : "text-slate-600")}>
+                                                {displayName}
+                                            </span>
                                         </button>
                                     );
                                 })}

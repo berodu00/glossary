@@ -17,6 +17,7 @@ public class SuggestionResponse {
     private String description;
     private Long processId;
     private String processName;
+    private String imageUrl;
     private SuggestionStatus status;
     private LocalDateTime createdAt;
     private LocalDateTime reviewedAt;
@@ -31,6 +32,7 @@ public class SuggestionResponse {
                 .description(suggestion.getDescription())
                 .processId(suggestion.getProcess() != null ? suggestion.getProcess().getId() : null)
                 .processName(suggestion.getProcess() != null ? suggestion.getProcess().getName() : null)
+                .imageUrl(suggestion.getImageUrl())
                 .status(suggestion.getStatus())
                 .createdAt(suggestion.getCreatedAt())
                 .reviewedAt(suggestion.getReviewedAt())

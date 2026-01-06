@@ -81,6 +81,20 @@ Milestone 9: 최종 통합 및 배포 준비
 [x] System: 최종 통합 테스트 및 TechSpec.md 준수 여부 전수 검사
 [x] System: Flyway Migration Consolidation (Clean V1) 및 DB 스키마 검증 완료
 
+Milestone 10: 고급 자모 검색 (Advanced Jamo Search)
+- [x] Backend: V2 Flyway Migration (terms 테이블 name_jamo, name_initials 추가)
+- [x] Backend: TermUtils 자모 분리 및 초성 추출 로직 고도화 (쌍자음, 복합모음 처리)
+- [x] Backend: Term Entity 생명주기(Builder/Update)에 자모 변환 로직 연동
+- [x] Backend: TermRepository 검색 로직 개선 (초성 전용 검색 vs 일반 자모 검색 분기)
+- [x] Frontend: 실시간 검색 비활성화 (Enter/Click Trigger) 구현
+- [x] Verification: 'ㅌ', 'ㅌㅅㅌ', '테스트' 검색 시나리오 검증 완료
+
+Milestone 11: 관리자 제안 상세 (Admin Suggestion Detail)
+- [x] Frontend: 재사용 가능한 Modal 컴포넌트 구현
+- [x] Frontend: AdminDashboard에 상세 보기 모달 통합
+- [x] Backend: DevDataSeeder에 테스트용 제안 데이터(Pending) 추가
+- [x] Verification: 제안 승인/반려 프로세스 검증 완료
+
 완료 조건 (Definition of Done)
 
 모든 마일스톤의 테스트 코드가 통과한다.

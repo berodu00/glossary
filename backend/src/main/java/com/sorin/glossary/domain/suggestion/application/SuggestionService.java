@@ -42,6 +42,7 @@ public class SuggestionService {
                 .nameEn(request.getNameEn())
                 .description(request.getDescription())
                 .process(process)
+                .imageUrl(request.getImageUrl())
                 .build();
 
         return suggestionRepository.save(suggestion).getId();
@@ -69,6 +70,7 @@ public class SuggestionService {
                 .description(suggestion.getDescription())
                 .updatedBy(reviewerId) // Currently creating, so using reviewer as creator/updater
                 .processes(suggestion.getProcess() != null ? Collections.singletonList(suggestion.getProcess()) : null)
+                .photoUrl(suggestion.getImageUrl())
                 .build();
 
         termRepository.save(term);

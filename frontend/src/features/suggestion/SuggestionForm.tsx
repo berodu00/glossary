@@ -5,18 +5,21 @@ import { Input } from '../../components/ui/Input';
 import { suggestionApi } from '../../api/suggestionApi';
 import { processApi } from '../../api/processApi';
 import type { Process } from '../../types';
+import { fileApi } from '../../api/fileApi';
 import { Loader2 } from 'lucide-react';
 
 export const SuggestionForm = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+    const [isUploading, setIsUploading] = useState(false);
     const [processes, setProcesses] = useState<Process[]>([]);
 
     const [formData, setFormData] = useState({
         nameKo: '',
         nameEn: '',
         description: '',
-        processId: ''
+        processId: '',
+        imageUrl: ''
     });
 
     useEffect(() => {
@@ -31,6 +34,22 @@ export const SuggestionForm = () => {
         loadProcesses();
     }, []);
 
+    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        setIsUploading(true);
+        try {
+            const { url } = await fileApi.upload(file);
+            setFormData(prev => ({ ...prev, imageUrl: url }));
+        } catch (error) {
+            console.error('File upload failed', error);
+            alert('이미지 업로드에 실패했습니다.');
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
@@ -39,7 +58,8 @@ export const SuggestionForm = () => {
                 nameKo: formData.nameKo,
                 nameEn: formData.nameEn || undefined,
                 description: formData.description,
-                processId: formData.processId ? Number(formData.processId) : undefined
+                processId: formData.processId ? Number(formData.processId) : undefined,
+                imageUrl: formData.imageUrl || undefined
             });
             alert('용어 제안이 등록되었습니다.');
             navigate('/');
@@ -99,6 +119,52 @@ export const SuggestionForm = () => {
                                 </option>
                             ))}
                         </select>
+                    </div>
+
+                    {/* Image Upload */}
+                    <div>
+                        <label className="block text-sm font-semibold text-slate-700 mb-2">
+                            이미지 첨부
+                        </label>
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center gap-4">
+                                <label className={`cursor-pointer bg-white border border-slate-300 rounded-lg px-4 py-2 hover:bg-slate-50 transition-colors flex items-center gap-2 ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                    <span className="text-sm font-medium text-slate-600">파일 선택</span>
+                                    <input
+                                        type="file"
+                                        className="hidden"
+                                        accept="image/*"
+                                        onChange={handleFileChange}
+                                        disabled={isUploading}
+                                    />
+                                </label>
+                                {isUploading && (
+                                    <div className="flex items-center gap-2 text-sm text-slate-500">
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        <span>업로드 중...</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            {formData.imageUrl && (
+                                <div className="mt-2 w-full max-w-xs h-40 rounded-lg border border-slate-200 overflow-hidden relative group">
+                                    <img
+                                        src={`http://localhost:8080${formData.imageUrl}`}
+                                        alt="Preview"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={() => setFormData({ ...formData, imageUrl: '' })}
+                                        className="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-md text-slate-500 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     {/* Description */}

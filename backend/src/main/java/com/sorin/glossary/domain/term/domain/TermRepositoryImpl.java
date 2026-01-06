@@ -6,6 +6,7 @@ import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.sorin.glossary.domain.term.dto.TermSearchCondition;
+import com.sorin.glossary.global.util.TermUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -57,7 +58,19 @@ public class TermRepositoryImpl implements TermRepositoryCustom {
         if (!StringUtils.hasText(keyword)) {
             return null;
         }
+
+        // 1. If keyword is ALL consonants (e.g. 'ㅌㅅㅌ'), search name_initials
+        if (TermUtils.isAllConsonants(keyword)) {
+            return term.nameInitials.containsIgnoreCase(keyword)
+                    .or(term.nameKo.containsIgnoreCase(keyword)) // Fallback to normal just in case
+                    .or(term.nameEn.containsIgnoreCase(keyword));
+        }
+
+        // 2. Otherwise, deconstruct keyword into Jamo and search name_jamo
+        String keywordJamo = TermUtils.extractJamo(keyword);
+
         return term.nameKo.containsIgnoreCase(keyword)
+                .or(term.nameJamo.containsIgnoreCase(keywordJamo)) // Jamo Match
                 .or(term.nameEn.containsIgnoreCase(keyword))
                 .or(term.abbreviation.containsIgnoreCase(keyword));
     }

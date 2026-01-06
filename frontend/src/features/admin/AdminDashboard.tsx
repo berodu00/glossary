@@ -3,11 +3,13 @@ import { AppLayout } from '../layout/AppLayout';
 import { suggestionApi } from '../../api/suggestionApi';
 import type { Suggestion } from '../../types';
 import { Badge } from '../../components/ui/Badge';
+import { Modal } from '../../components/ui/Modal';
 import { Check, X, Loader2 } from 'lucide-react';
 
 export const AdminDashboard = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+    const [selectedSuggestion, setSelectedSuggestion] = useState<Suggestion | null>(null);
 
     const loadSuggestions = async () => {
         setIsLoading(true);
@@ -25,11 +27,12 @@ export const AdminDashboard = () => {
         loadSuggestions();
     }, []);
 
-    const handleApprove = async (id: number) => {
-        // Confirm removed for easier testing and faster admin workflow
+    const handleApprove = async () => {
+        if (!selectedSuggestion) return;
         try {
-            await suggestionApi.approve(id);
+            await suggestionApi.approve(selectedSuggestion.id);
             alert('승인되었습니다.');
+            setSelectedSuggestion(null);
             loadSuggestions(); // Reload list
         } catch (error) {
             console.error(error);
@@ -37,13 +40,15 @@ export const AdminDashboard = () => {
         }
     };
 
-    const handleReject = async (id: number) => {
+    const handleReject = async () => {
+        if (!selectedSuggestion) return;
         const reason = prompt('반려 사유를 입력해주세요:');
         if (reason === null) return; // Cancelled
 
         try {
-            await suggestionApi.reject(id, reason);
+            await suggestionApi.reject(selectedSuggestion.id, reason);
             alert('반려되었습니다.');
+            setSelectedSuggestion(null);
             loadSuggestions(); // Reload list
         } catch (error) {
             console.error(error);
@@ -79,12 +84,16 @@ export const AdminDashboard = () => {
                                         <th className="px-6 py-4 text-sm font-semibold text-slate-600">용어명</th>
                                         <th className="px-6 py-4 text-sm font-semibold text-slate-600">설명</th>
                                         <th className="px-6 py-4 text-sm font-semibold text-slate-600">요청자</th>
-                                        <th className="px-6 py-4 text-sm font-semibold text-slate-600 text-right">관리</th>
+                                        <th className="px-6 py-4 text-sm font-semibold text-slate-600 text-right">상세</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
                                     {suggestions.map((suggestion) => (
-                                        <tr key={suggestion.id} className="hover:bg-slate-50/50 transition-colors">
+                                        <tr
+                                            key={suggestion.id}
+                                            className="hover:bg-slate-50/50 transition-colors cursor-pointer"
+                                            onClick={() => setSelectedSuggestion(suggestion)}
+                                        >
                                             <td className="px-6 py-4">
                                                 <Badge variant="process">
                                                     {suggestion.processName || '공통'}
@@ -102,23 +111,8 @@ export const AdminDashboard = () => {
                                             <td className="px-6 py-4 text-sm text-slate-500 font-mono">
                                                 {suggestion.requesterId}
                                             </td>
-                                            <td className="px-6 py-4 text-right">
-                                                <div className="flex justify-end gap-2">
-                                                    <button
-                                                        onClick={() => handleApprove(suggestion.id)}
-                                                        className="p-2 text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors border border-emerald-200"
-                                                        title="승인"
-                                                    >
-                                                        <Check className="w-5 h-5" />
-                                                    </button>
-                                                    <button
-                                                        onClick={() => handleReject(suggestion.id)}
-                                                        className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors border border-red-200"
-                                                        title="반려"
-                                                    >
-                                                        <X className="w-5 h-5" />
-                                                    </button>
-                                                </div>
+                                            <td className="px-6 py-4 text-right text-sm text-blue-500 font-medium">
+                                                클릭하여 상세 보기
                                             </td>
                                         </tr>
                                     ))}
@@ -128,6 +122,77 @@ export const AdminDashboard = () => {
                     )}
                 </div>
             </div>
+
+            {/* Suggestion Detail Modal */}
+            <Modal
+                isOpen={!!selectedSuggestion}
+                onClose={() => setSelectedSuggestion(null)}
+                title="제안 상세 정보"
+            >
+                {selectedSuggestion && (
+                    <div className="space-y-6">
+                        {/* Header Info */}
+                        <div className="flex flex-col gap-1 pb-4 border-b border-slate-100">
+                            <div className="text-sm text-slate-500 flex items-center gap-2">
+                                <span className="font-mono bg-slate-100 px-2 py-0.5 rounded text-xs">{selectedSuggestion.requesterId}</span>
+                                <span>님이 제안함</span>
+                                <span className="text-slate-300">•</span>
+                                <span>{new Date(selectedSuggestion.createdAt).toLocaleDateString()}</span>
+                            </div>
+                        </div>
+
+                        {/* Core Data */}
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label className="block text-xs font-bold text-slate-400 uppercase mb-1">한글 용어명</label>
+                                <div className="text-lg font-bold text-slate-900">{selectedSuggestion.nameKo}</div>
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold text-slate-400 uppercase mb-1">영문 용어명</label>
+                                <div className="text-lg font-medium text-slate-700 font-mono">{selectedSuggestion.nameEn || '-'}</div>
+                            </div>
+                            <div>
+                                <label className="block text-xs font-bold text-slate-400 uppercase mb-1">관련 공정</label>
+                                <div><Badge variant="process">{selectedSuggestion.processName || '공통'}</Badge></div>
+                            </div>
+                        </div>
+
+                        {/* Description */}
+                        <div>
+                            <label className="block text-xs font-bold text-slate-400 uppercase mb-2">용어 설명</label>
+                            <div className="bg-slate-50 p-4 rounded-xl text-slate-700 leading-relaxed border border-slate-100">
+                                {selectedSuggestion.description}
+                            </div>
+                        </div>
+
+                        {/* Image Preview (If any) */}
+                        {selectedSuggestion.imageUrl && (
+                            <div>
+                                <label className="block text-xs font-bold text-slate-400 uppercase mb-2">첨부 이미지</label>
+                                <img src={selectedSuggestion.imageUrl} alt="Reference" className="rounded-lg border border-slate-200 max-h-60 object-contain bg-slate-50" />
+                            </div>
+                        )}
+
+                        {/* Actions Footer */}
+                        <div className="flex justify-end gap-3 pt-4 border-t border-slate-100 mt-8">
+                            <button
+                                onClick={handleReject}
+                                className="px-4 py-2 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg font-bold transition-colors flex items-center gap-2"
+                            >
+                                <X className="w-4 h-4" />
+                                반려
+                            </button>
+                            <button
+                                onClick={handleApprove}
+                                className="px-6 py-2 text-white bg-emerald-500 hover:bg-emerald-600 rounded-lg font-bold transition-colors shadow-sm shadow-emerald-200 flex items-center gap-2"
+                            >
+                                <Check className="w-4 h-4" />
+                                승인
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </Modal>
         </AppLayout>
     );
 };

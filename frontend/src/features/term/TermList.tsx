@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { termApi } from '../../api/termApi';
 import { TermCard } from './TermCard';
@@ -9,19 +10,27 @@ interface TermListProps {
 }
 
 export const TermList = ({ searchParams }: TermListProps) => {
+    const [page, setPage] = useState(1);
+    const pageSize = 5;
+
+    // Reset page when filters change
+    useEffect(() => {
+        setPage(1);
+    }, [searchParams.keyword, searchParams.initial, searchParams.processIds]);
+
     // React Query
     const { data: termsData, isLoading, isError } = useQuery({
-        queryKey: ['terms', searchParams.keyword, searchParams.initial, searchParams.processIds],
-        queryFn: () => termApi.search(searchParams),
+        queryKey: ['terms', searchParams.keyword, searchParams.initial, searchParams.processIds, page],
+        queryFn: () => termApi.search({ ...searchParams, page: page - 1, size: pageSize }),
         staleTime: 5000,
     });
 
     return (
-        <section className="max-w-7xl mx-auto px-4 py-8 animate-fade-in relative z-0">
-            <div className="flex justify-between items-center mb-6">
+        <section className="w-full animate-fade-in relative z-0">
+            <div className="flex justify-between items-center mb-6 pb-4 border-b-2 border-primary-500">
                 <h2 className="text-lg font-bold text-slate-800">
                     {termsData?.totalElements ? (
-                        <>총 <span className="text-primary-600">{termsData.totalElements}</span>건의 용어가 있습니다</>
+                        <>총 <span className="text-primary-600 font-bold">{termsData.totalElements}</span>건</>
                     ) : (
                         '검색 결과'
                     )}
@@ -52,11 +61,34 @@ export const TermList = ({ searchParams }: TermListProps) => {
             )}
 
             {!isLoading && !isError && termsData?.content && (
-                <div className="grid grid-cols-1 gap-6">
-                    {termsData.content.map((term) => (
-                        <TermCard key={term.id} term={term} />
-                    ))}
-                </div>
+                <>
+                    <div className="grid grid-cols-1 gap-6">
+                        {termsData.content.map((term) => (
+                            <TermCard key={term.id} term={term} />
+                        ))}
+                    </div>
+
+                    {/* Pagination */}
+                    {termsData.totalPages > 1 && (
+                        <div className="flex justify-center mt-12 gap-2 flex-wrap">
+                            {Array.from({ length: termsData.totalPages }).map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => {
+                                        setPage(i + 1);
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }}
+                                    className={`w-10 h-10 rounded-full font-bold transition-all ${page === i + 1
+                                            ? 'bg-blue-500 text-white shadow-lg scale-110'
+                                            : 'bg-white text-slate-400 hover:bg-slate-50 hover:text-blue-500'
+                                        }`}
+                                >
+                                    {i + 1}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </>
             )}
         </section>
     );

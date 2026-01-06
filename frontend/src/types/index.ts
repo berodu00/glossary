@@ -5,6 +5,7 @@ export interface Term {
     nameEn?: string;
     processId?: number;
     processName?: string;
+    photoUrl?: string;
     createdAt: string;
     updatedAt: string;
     // Synonyms will be added in M6/M7 if needed here, usually in detail
@@ -56,6 +57,7 @@ export interface Suggestion {
     processId?: number;
     processName?: string;
     status: SuggestionStatus;
+    imageUrl?: string;
     createdAt: string;
     reviewedAt?: string;
     reviewerNote?: string;
@@ -66,4 +68,5 @@ export interface CreateSuggestionRequest {
     nameEn?: string;
     description: string;
     processId?: number;
+    imageUrl?: string;
 }

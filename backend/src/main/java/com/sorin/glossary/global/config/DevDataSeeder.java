@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.sorin.glossary.domain.suggestion.application.SuggestionService;
+
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -27,6 +29,7 @@ public class DevDataSeeder implements CommandLineRunner {
 
     private final ProcessService processService;
     private final TermService termService;
+    private final SuggestionService suggestionService;
     private final ProcessRepository processRepository;
     private final TermRepository termRepository;
     private final SuggestionRepository suggestionRepository;
@@ -96,6 +99,32 @@ public class DevDataSeeder implements CommandLineRunner {
         createTerm("교반기", "Agitator", null, "액체를 섞기 위한 장치", pMap.get("Electrolysis"), "혼합");
         createTerm("Scrap", "스크랩", null, "재활용을 위해 회수된 금속 부스러기", pMap.get("Smelting"), "고철");
         createTerm("Zinc", "아연", "Zn", "주기율표 30번 원소", pMap.get("Smelting"), "원소");
+
+        // Jamo Search Test Data
+        createTerm("테스트", "Test", null, "자모 검색 테스트 용어", pMap.get("Environment"), null);
+
+        // 3. Seed Suggestions
+        seedSuggestions(pMap);
+
+        log.info("✅ Dev Data Seeding Completed!");
+    }
+
+    private void seedSuggestions(Map<String, Long> pMap) {
+        suggestionService.createSuggestion(
+                com.sorin.glossary.domain.suggestion.dto.CreateSuggestionRequest.builder()
+                        .nameKo("새로운 용어 제안")
+                        .nameEn("New Term Suggestion")
+                        .description("이 용어를 추가해주세요. 검토 부탁드립니다.")
+                        .processId(pMap.get("Smelting"))
+                        .build(),
+                "user123");
+        suggestionService.createSuggestion(
+                com.sorin.glossary.domain.suggestion.dto.CreateSuggestionRequest.builder()
+                        .nameKo("반려될 제안")
+                        .description("설명이 부족한 제안입니다.")
+                        .processId(pMap.get("Casting"))
+                        .build(),
+                "user456");
     }
 
     private void createTerm(String nameKo, String nameEn, String abbr, String desc, Long processId, String synonym) {

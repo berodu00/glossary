@@ -17,7 +17,8 @@ export const LoginPage = () => {
         setError('');
 
         try {
-            await login(userId);
+            const role = userId === 'test_admin' ? 'ROLE_ADMIN' : 'ROLE_USER';
+            await login(userId, role);
             navigate('/');
         } catch (err) {
             setError('로그인에 실패했습니다. 사번을 확인해주세요.');
