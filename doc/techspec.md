@@ -143,6 +143,7 @@
 
 ### 5.3 용어 상세 조회 (GET /api/v1/terms/{id})
 
+* **Response**: Term 상세 정보 (processes: List<{id, name}> 포함)
 * **구현 규칙**: 요청된 ID의 데이터가 `deleted_at`이 NULL이 아닌 경우 404 에러를 반환한다.
 
 ## 6. 관리자(Admin) 기능

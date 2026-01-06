@@ -94,7 +94,7 @@ public class Term {
         this.nameInitials = TermUtils.extractInitials(nameKo);
 
         if (processes != null) {
-            this.processes = processes;
+            this.processes = new ArrayList<>(processes);
         }
     }
 
@@ -117,7 +117,7 @@ public class Term {
         this.nameInitials = TermUtils.extractInitials(nameKo);
 
         if (processes != null) {
-            this.processes = processes;
+            this.processes = new ArrayList<>(processes);
         }
     }
 }

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { BookMarked, Settings, PlusCircle, ShieldCheck, UserCircle } from 'lucide-react';
+import { BookMarked, Settings, PlusCircle, ShieldCheck, UserCircle, LogOut } from 'lucide-react';
 
 import { useAuth } from '../../context/AuthContext';
 
 export const Header = () => {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
 
     return (
         <header className="relative z-20 sticky top-0 bg-white/70 backdrop-blur-md border-b border-white/20">
@@ -54,8 +54,17 @@ export const Header = () => {
                         <Settings className="w-5 h-5" />
                     </button>
                     {user && (
-                        <div className="hidden md:flex ml-2 h-8 px-3 bg-slate-100/50 rounded-full items-center justify-center text-xs font-semibold text-primary-600 border border-slate-200 shadow-sm">
-                            {user.role === 'ROLE_ADMIN' ? 'ADMIN' : 'USER'}
+                        <div className="flex items-center gap-3">
+                            <div className="hidden md:flex h-8 px-3 bg-slate-100/50 rounded-full items-center justify-center text-xs font-semibold text-primary-600 border border-slate-200 shadow-sm">
+                                {user.role === 'ROLE_ADMIN' ? 'ADMIN' : 'USER'}
+                            </div>
+                            <button
+                                onClick={logout}
+                                className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-colors"
+                                title="로그아웃"
+                            >
+                                <LogOut className="w-5 h-5" />
+                            </button>
                         </div>
                     )}
                 </nav>

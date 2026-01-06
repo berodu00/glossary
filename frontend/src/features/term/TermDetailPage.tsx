@@ -62,7 +62,9 @@ export const TermDetailPage = () => {
                         <div className="flex justify-between items-start mb-6">
                             <div className="space-y-4">
                                 <Badge variant="process" className="text-sm px-3 py-1">
-                                    {term.processName || '공통'}
+                                    {term.processes && term.processes.length > 0
+                                        ? term.processes.map(p => p.name).join(', ')
+                                        : '공통'}
                                 </Badge>
                                 <div>
                                     <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">

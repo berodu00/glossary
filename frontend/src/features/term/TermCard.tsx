@@ -49,7 +49,9 @@ export const TermCard = ({ term }: TermCardProps) => {
 
             <div className="flex items-center justify-between mt-auto">
                 <Badge variant="process">
-                    {term.processName || '공통'}
+                    {term.processes && term.processes.length > 0
+                        ? term.processes.map(p => p.name).join(', ')
+                        : '공통'}
                 </Badge>
 
                 <Link

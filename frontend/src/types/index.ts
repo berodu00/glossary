@@ -3,8 +3,7 @@ export interface Term {
     nameKo: string;
     description: string;
     nameEn?: string;
-    processId?: number;
-    processName?: string;
+    processes: { id: number; name: string }[];
     photoUrl?: string;
     createdAt: string;
     updatedAt: string;

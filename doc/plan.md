@@ -95,6 +95,11 @@ Milestone 11: 관리자 제안 상세 (Admin Suggestion Detail)
 - [x] Backend: DevDataSeeder에 테스트용 제안 데이터(Pending) 추가
 - [x] Verification: 제안 승인/반려 프로세스 검증 완료
 
+Milestone 12: Maintenance & Refinements
+- [x] Frontend: 로그아웃(Logout) UI 및 기능 구현
+- [x] Bug Fix: 제안 승인 시 공정 정보가 Term으로 이관되지 않는 문제 수정 (Backend: List Immutability)
+- [x] Bug Fix: 용어 카드 및 상세 페이지에서 공정 배지가 '공통'으로만 표시되는 문제 수정 (Frontend: Type mismatch)
+
 완료 조건 (Definition of Done)
 
 모든 마일스톤의 테스트 코드가 통과한다.
